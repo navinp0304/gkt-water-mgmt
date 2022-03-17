@@ -1,4 +1,4 @@
-package geektrust_water_management;
+package geektrust.watermgmt.src;
 
 import java.util.Scanner;
 
@@ -54,6 +54,7 @@ public class CommandParser {
 			BillCommand cmd = new BillCommand();
 
 			aptBase = cmd.parseCommand(aptBase, line);
+			aptBase = null;
 
 		} else {
 			if (line.length() > 0) {

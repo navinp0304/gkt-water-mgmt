@@ -1,4 +1,4 @@
-package geektrust_water_management;
+package geektrust.watermgmt.src;
 
 public class WaterManagement {
 

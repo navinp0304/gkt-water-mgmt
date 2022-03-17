@@ -1,12 +1,12 @@
-package geektrust_water_management;
+package geektrust.watermgmt.src;
 
-public class Apartment2BHK extends ApartmentBase {
+public class Apartment3BHK extends ApartmentBase {
 
-	public Apartment2BHK(Integer people, Integer defpeople, Double ratio) {
+	public Apartment3BHK(Integer people, Integer defpeople, Double ratio) {
 		super(people, defpeople, ratio);
 	}
 
-	public Apartment2BHK(Integer people, Integer defpeople, String s) {
+	public Apartment3BHK(Integer people, Integer defpeople, String s) {
 		super(people, defpeople, s);
 	}
 
@@ -27,7 +27,6 @@ public class Apartment2BHK extends ApartmentBase {
 			throw new IllegalArgumentException("ratio < 0");
 		if (ratio > 1)
 			throw new IllegalArgumentException("ratio > 1");
-		
-		return new Apartment2BHK(this.getNumberOfPeople(), this.getDefaultPeople(), ratio);
+		return new Apartment3BHK(this.getNumberOfPeople(), this.getDefaultPeople(), ratio);
 	}
 }

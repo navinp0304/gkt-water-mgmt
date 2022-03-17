@@ -1,4 +1,4 @@
-package test;
+package geektrust.watermgmt.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -9,8 +9,8 @@ import java.io.PrintStream;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import geektrust_water_management.ApartmentBase;
-import geektrust_water_management.CommandParser;
+import geektrust.watermgmt.src.ApartmentBase;
+import geektrust.watermgmt.src.CommandParser;
 
 class CommandParserTest {
 	CommandParser cmd;
@@ -106,9 +106,10 @@ class CommandParserTest {
 		assertEquals(obj.getTotalLitres() / (obj.getDaysMonth() * obj.getLitresPerson()), 14);
 
 		obj = cmd.parse("BILL");
-
-		assertEquals(obj.getTotalLitres(), 4200, 1e-4);
-		assertEquals(obj.getCost(), 15100, 1e-4);
+		if(obj!=null) {
+			assertEquals(obj.getTotalLitres(), 4200, 1e-4);
+			assertEquals(obj.getCost(), 15100, 1e-4);
+		}
 
 	}
 

@@ -1,4 +1,4 @@
-package geektrust_water_management;
+package geektrust.watermgmt.src;
 
 import java.util.List;
 import java.util.Map;

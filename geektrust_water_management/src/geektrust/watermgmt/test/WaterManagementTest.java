@@ -1,4 +1,4 @@
-package test;
+package geektrust.watermgmt.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -9,7 +9,7 @@ import java.io.PrintStream;
 
 import org.junit.jupiter.api.Test;
 
-import geektrust_water_management.WaterManagement;
+import geektrust.watermgmt.src.WaterManagement;
 
 class WaterManagementTest {
 	

@@ -1,14 +1,14 @@
-package test;
+package geektrust.watermgmt.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import geektrust_water_management.Apartment2BHK;
-import geektrust_water_management.Apartment3BHK;
-import geektrust_water_management.ApartmentBase;
-import geektrust_water_management.BorewellRate;
+import geektrust.watermgmt.src.Apartment2BHK;
+import geektrust.watermgmt.src.Apartment3BHK;
+import geektrust.watermgmt.src.ApartmentBase;
+import geektrust.watermgmt.src.BorewellRate;
 
 class BorewellRateTest {
 	BorewellRate obj;
