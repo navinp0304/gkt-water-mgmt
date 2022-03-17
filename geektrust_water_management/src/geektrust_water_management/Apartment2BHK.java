@@ -2,11 +2,11 @@ package geektrust_water_management;
 
 public class Apartment2BHK extends ApartmentBase {
 
-	Apartment2BHK(Integer people, Integer defpeople, Double ratio) {
+	public Apartment2BHK(Integer people, Integer defpeople, Double ratio) {
 		super(people, defpeople, ratio);
 	}
 
-	Apartment2BHK(Integer people, Integer defpeople, String s) {
+	public Apartment2BHK(Integer people, Integer defpeople, String s) {
 		super(people, defpeople, s);
 	}
 

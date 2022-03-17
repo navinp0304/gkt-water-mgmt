@@ -1,9 +1,12 @@
-package geektrust_water_management;
+package test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import geektrust_water_management.Apartment2BHK;
+import geektrust_water_management.ApartmentBase;
 
 class Apartment2BHKTest {
 	ApartmentBase apt2Bhk;
