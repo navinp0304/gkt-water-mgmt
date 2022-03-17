@@ -1,2 +1,0 @@
-# geektrust
-geektrust challenges
