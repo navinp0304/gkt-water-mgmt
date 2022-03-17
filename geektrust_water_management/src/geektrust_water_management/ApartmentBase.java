@@ -27,7 +27,7 @@ public abstract class ApartmentBase {
 	/**
 	 * type is the key , 2 for 2BHK and 3 for 3BHK
 	 */
-	static Map<Integer,ApartmentBase> validTypes =
+	public static Map<Integer,ApartmentBase> validTypes =
 			Map.of(
 				    2,new Apartment2BHK(3,3,0.0),
 				    3,new Apartment3BHK(5,5,0.0)

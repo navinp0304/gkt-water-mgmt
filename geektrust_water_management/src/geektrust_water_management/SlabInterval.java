@@ -5,7 +5,7 @@ public class SlabInterval {
 	private Double End;
 	private Double Rate;
 
-	SlabInterval(Double start, Double end, Double rate) {
+	public SlabInterval(Double start, Double end, Double rate) {
 		if (start < 0)
 			throw new IllegalArgumentException("start < 0");
 		if (end < 0)

@@ -1,4 +1,4 @@
-package geektrust_water_management;
+package test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import geektrust_water_management.SlabInterval;
 
 class SlabIntervalTest {
 	List<SlabInterval> lobj;
