@@ -1,8 +1,14 @@
-geektrust water management
-build command is mvn validate clean dependency:copy-dependencies compile test
+# geektrust water management
+
+**Build command  is**
+
+
+```
+mvn validate clean dependency:copy-dependencies compile test
+```
 
 Output is like
-
+```
 [INFO]
 [INFO] Results:
 [INFO]
@@ -11,3 +17,4 @@ Output is like
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] -------------------------
+```
