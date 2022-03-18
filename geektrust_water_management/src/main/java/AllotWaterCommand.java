@@ -1,4 +1,4 @@
-package main;
+package main.java;
 
 /**
  * case sensitive ALLOT_WATER <apartment-type> <ratio> syntax

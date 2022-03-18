@@ -1,4 +1,4 @@
-package main;
+package main.java;
 
 public class BorewellRate implements IRateCalculator {
 	private final Double BOREWELL_RATE = 1.5;

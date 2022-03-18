@@ -1,4 +1,4 @@
-package test;
+package test.java;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -9,8 +9,8 @@ import java.io.PrintStream;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import main.ApartmentBase;
-import main.CommandParser;
+import main.java.ApartmentBase;
+import main.java.CommandParser;
 
 class CommandParserTest {
 	CommandParser cmd;

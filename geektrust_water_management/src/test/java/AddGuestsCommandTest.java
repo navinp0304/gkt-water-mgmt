@@ -1,16 +1,16 @@
-package test;
+package test.java;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import main.AddGuestsCommand;
-import main.AllotWaterCommand;
-import main.Apartment2BHK;
-import main.Apartment3BHK;
-import main.ApartmentBase;
-import main.BillCommand;
+import main.java.AddGuestsCommand;
+import main.java.AllotWaterCommand;
+import main.java.Apartment2BHK;
+import main.java.Apartment3BHK;
+import main.java.ApartmentBase;
+import main.java.BillCommand;
 
 class AddGuestsCommandTest {
 	ApartmentBase apt2BHK, apt3BHK, obj;

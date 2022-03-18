@@ -1,12 +1,12 @@
-package test;
+package test.java;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import main.Apartment3BHK;
-import main.ApartmentBase;
+import main.java.Apartment3BHK;
+import main.java.ApartmentBase;
 
 class Apartment3BHKTest {
 	ApartmentBase apt3Bhk;

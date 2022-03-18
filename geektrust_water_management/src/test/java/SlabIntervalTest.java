@@ -1,4 +1,4 @@
-package test;
+package test.java;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -7,7 +7,7 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import main.SlabInterval;
+import main.java.SlabInterval;
 
 class SlabIntervalTest {
 	List<SlabInterval> lobj;
