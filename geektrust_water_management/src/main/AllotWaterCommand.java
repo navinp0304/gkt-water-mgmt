@@ -1,4 +1,4 @@
-package geektrust.watermgmt.src;
+package main;
 
 /**
  * case sensitive ALLOT_WATER <apartment-type> <ratio> syntax

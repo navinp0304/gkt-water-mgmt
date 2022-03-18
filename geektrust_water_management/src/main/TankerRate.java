@@ -1,4 +1,4 @@
-package geektrust.watermgmt.src;
+package main;
 
 import java.util.List;
 

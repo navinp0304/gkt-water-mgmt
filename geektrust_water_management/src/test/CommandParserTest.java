@@ -1,4 +1,4 @@
-package geektrust.watermgmt.test;
+package test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -9,8 +9,8 @@ import java.io.PrintStream;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import geektrust.watermgmt.src.ApartmentBase;
-import geektrust.watermgmt.src.CommandParser;
+import main.ApartmentBase;
+import main.CommandParser;
 
 class CommandParserTest {
 	CommandParser cmd;

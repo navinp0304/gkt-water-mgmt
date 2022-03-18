@@ -1,16 +1,16 @@
-package geektrust.watermgmt.test;
+package test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import geektrust.watermgmt.src.AddGuestsCommand;
-import geektrust.watermgmt.src.AllotWaterCommand;
-import geektrust.watermgmt.src.Apartment2BHK;
-import geektrust.watermgmt.src.Apartment3BHK;
-import geektrust.watermgmt.src.ApartmentBase;
-import geektrust.watermgmt.src.BillCommand;
+import main.AddGuestsCommand;
+import main.AllotWaterCommand;
+import main.Apartment2BHK;
+import main.Apartment3BHK;
+import main.ApartmentBase;
+import main.BillCommand;
 
 class AllotWaterCommandTest {
 	ApartmentBase apt2BHK, apt3BHK, obj;

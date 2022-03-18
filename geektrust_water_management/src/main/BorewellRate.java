@@ -1,4 +1,4 @@
-package geektrust.watermgmt.src;
+package main;
 
 public class BorewellRate implements IRateCalculator {
 	private final Double BOREWELL_RATE = 1.5;
