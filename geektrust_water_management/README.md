@@ -1,8 +1,16 @@
-geektrust water management
-build command is mvn validate clean dependency:copy-dependencies compile test
+# geektrust water management
+
+**Build command  is**
+
+
+```
+mvn validate clean dependency:copy-dependencies compile test
+```
+
+### Above command runs unit tests and is dependent on junit 5.
 
 Output is like
-
+```
 [INFO]
 [INFO] Results:
 [INFO]
@@ -11,3 +19,4 @@ Output is like
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] -------------------------
+```
