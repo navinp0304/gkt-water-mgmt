@@ -20,3 +20,9 @@ Output is like
 [INFO] BUILD SUCCESS
 [INFO] -------------------------
 ```
+
+### For code coverage using jacoco run below command
+```
+mvn clean jacoco:prepare-agent test jacoco:report 
+```
+
