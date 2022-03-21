@@ -1,4 +1,4 @@
-package main.java;
+package main.java.watermgmt;
 
 public class CorporationRate implements IRateCalculator {
 	private final Double CORPORATION_RATE = 1.0;

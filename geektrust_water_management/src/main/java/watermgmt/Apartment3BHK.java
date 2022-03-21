@@ -1,4 +1,4 @@
-package main.java;
+package main.java.watermgmt;
 
 public class Apartment3BHK extends ApartmentBase {
 
