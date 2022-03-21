@@ -1,4 +1,4 @@
-package test.java.mgmt;
+package test.java.watermgmt;
 
 import static org.junit.jupiter.api.Assertions.*;
 

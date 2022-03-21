@@ -1,1 +1,1 @@
-package test.java.mgmt;
+package test.java.watermgmt;
