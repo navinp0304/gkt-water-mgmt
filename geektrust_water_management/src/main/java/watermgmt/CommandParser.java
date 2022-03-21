@@ -57,9 +57,9 @@ public class CommandParser {
 			aptBase = null;
 
 		} else {
-			if (line.length() > 0) {
+
 				throw new IllegalArgumentException("Wrong Command : Ignoring");
-			}
+
 		}
 		return aptBase;
 
