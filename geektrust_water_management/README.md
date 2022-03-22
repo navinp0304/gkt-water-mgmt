@@ -31,6 +31,6 @@ For ant run
 
 or 
 
-run antbuild.sh
+run ./antbuild.sh
 
 to get junit test reports.
