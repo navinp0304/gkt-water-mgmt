@@ -26,3 +26,11 @@ Output is like
 mvn clean jacoco:prepare-agent test jacoco:report 
 ```
 
+For ant run
+./apache-ant-1.10.12/bin/ant
+
+or 
+
+run antbuild.sh
+
+to get junit test reports.
