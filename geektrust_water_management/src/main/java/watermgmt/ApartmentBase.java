@@ -31,6 +31,7 @@ public abstract class ApartmentBase {
 			Map.of(
 				    2,new Apartment2BHK(3,3,0.0),
 				    3,new Apartment3BHK(5,5,0.0)
+				    // 4,new Apartment4BHK(7,7,0.0) followed by a new class Apartment4BHK extending ApartmentBase
 				  );
 
 	List<IRateCalculator> rateList =
@@ -38,6 +39,7 @@ public abstract class ApartmentBase {
 					 new BorewellRate(),
 					 new CorporationRate(),
 					 new TankerRate()
+					 // new rate can be added here implementing IRateCalculator
 				   );
 
 	// @formatter: on
