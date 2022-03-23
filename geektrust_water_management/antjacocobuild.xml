@@ -1,0 +1,149 @@
+<project default="rebuild" xmlns:jacoco="antlib:org.jacoco.ant">
+
+	<fail message="Ant 1.10.6+ is required!">
+		<condition>
+			<not>
+				<antversion atleast="1.10.6" />
+			</not>
+		</condition>
+	</fail>
+
+	<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
+
+		<classpath>
+			<pathelement path="${classpath}" />
+			<fileset dir="./coveragelib">
+				<include name="**/*.jar" />
+			</fileset>
+		</classpath>
+
+		<!--	
+<classpath path="./coveragelib/lib/*.jar"/>
+-->
+
+	</taskdef>
+	<!--
+	<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
+		<classpath path="lib/org.jacoco.ant-0.8.7-nodeps.jar" />
+	</taskdef>
+	-->
+
+	<target name="rebuild" depends="clean, report" />
+
+	<target name="clean">
+		<delete dir="build" />
+	</target>
+
+
+	<!--
+	<path id="test.classpath">
+		<pathelement path="build/test" />
+		<pathelement path="build/main" />
+		<fileset dir="${ant.home}/lib" includes="*.jar" />
+
+		<fileset dir="./lib" casesensitive="yes">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="./coveragelib/lib" casesensitive="yes">
+			<include name="**/*.jar" />
+		</fileset>
+
+		<fileset dir="${user.home}/.m2/repository" casesensitive="yes">
+			<include name="**/*.jar" />
+		</fileset>
+
+
+	</path> -->
+
+	<path id="test.classpath">
+		<pathelement path="build/main" />
+		<pathelement path="build/test" />
+
+		<fileset dir="${ant.home}/lib" includes="*.jar" />
+
+	</path>
+
+	<target name="build" description="clean build" depends="clean,report" />
+
+
+
+	<target name="init">
+		<mkdir dir="build/main" />
+		<mkdir dir="build/test" />
+		<mkdir dir="build/test-report" />
+	</target>
+
+
+
+	<target name="compile" depends="init">
+		<mkdir dir="build/main" />
+		<javac destdir="build/main" srcdir="src/main/java" includeantruntime="false" debug="true" />
+		<mkdir dir="build/test" />
+		<javac destdir="build/test" srcdir="src/test/java" includeantruntime="false" debug="true" classpathref="test.classpath" />
+	</target>
+
+
+	<target name="test" depends="compile">
+		<jacoco:agent property="jacocoagent" destfile="build/jacoco.exec" />
+		<junitlauncher>
+			<classpath refid="test.classpath" />
+			<testclasses>
+				<fileset dir="build/test">
+					<include name="**/*Test.class" />
+				</fileset>
+				<fork>
+					<jvmarg value="${jacocoagent}" />
+				</fork>
+			</testclasses>
+		</junitlauncher>
+	</target>
+
+	<!-- https://junit.org/junit5/docs/snapshot/user-guide/#running-tests-build-ant -->
+	<target name="test.junit.launcher" depends="compile">
+		<junitlauncher haltOnFailure="true" printSummary="true">
+			<classpath refid="test.classpath" />
+			<testclasses outputdir="build/test-report">
+				<fileset dir="build/test">
+					<include name="**/*Test.class" />
+				</fileset>
+				<listener type="legacy-xml" sendSysOut="true" sendSysErr="true" />
+				<listener type="legacy-plain" sendSysOut="true" />
+			</testclasses>
+		</junitlauncher>
+	</target>
+
+
+	<!-- https://junit.org/junit5/docs/current/user-guide/#running-tests-console-launcher -->
+	<target name="test.console.launcher" depends="compile">
+		<jacoco:coverage destfile="build/jacoco.exec">
+			<java classpathref="test.classpath" classname="org.junit.platform.console.ConsoleLauncher" fork="true" failonerror="true">
+				<arg value="--scan-classpath" />
+				<arg line="--reports-dir build/test-report" />
+			</java>
+		</jacoco:coverage>
+		<junitreport todir="build/test-report">
+			<fileset dir="build/test-report">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report format="frames" todir="build/test-report/html" />
+		</junitreport>
+	</target>
+
+	<target name="report" depends="test.junit.launcher,test.console.launcher,test">
+		<jacoco:report>
+			<executiondata>
+				<file file="build/jacoco.exec" />
+			</executiondata>
+			<structure name="JaCoCo Ant Example">
+				<classfiles>
+					<fileset dir="build/main" />
+				</classfiles>
+				<sourcefiles encoding="UTF-8">
+					<fileset dir="src/main/java" />
+				</sourcefiles>
+			</structure>
+			<html destdir="build/jacoco-report" />
+		</jacoco:report>
+	</target>
+
+</project>
