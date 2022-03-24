@@ -1,6 +1,0 @@
-Testcase: test.java.watermgmt.SlabIntervalTest
-Test: testGetCost() took 5 milli sec(s)
-Test: testGetRate() took 4 milli sec(s)
-Test: testSlabInterval() took 6 milli sec(s)
-Test: testGetEnd() took 5 milli sec(s)
-Tests run: 4, Failures: 0, Skipped: 0, Aborted: 0, Time elapsed: 31 milli sec(s)
