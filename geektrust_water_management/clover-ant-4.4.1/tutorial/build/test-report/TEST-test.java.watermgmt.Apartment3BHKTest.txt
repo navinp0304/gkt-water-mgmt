@@ -1,0 +1,8 @@
+Testcase: test.java.watermgmt.Apartment3BHKTest
+Test: testGetDefaultLitres() took 7 milli sec(s)
+Test: testAllCommands() took 6 milli sec(s)
+Test: testCloneIntegerDouble() took 6 milli sec(s)
+Test: testApartment3BHKDefaultCost() took 6 milli sec(s)
+Test: testApartment3BHKIntegerDouble() took 9 milli sec(s)
+Test: testApartment3BHKIntegerString() took 13 milli sec(s)
+Tests run: 6, Failures: 0, Skipped: 0, Aborted: 0, Time elapsed: 77 milli sec(s)

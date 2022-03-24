@@ -1,0 +1,115 @@
+<project name="Clover_Tutorial" default="clover.report" basedir=".">
+
+    <!--
+        How to call this build file:
+
+        ant -f build_quick.xml install.clover
+        ant -f build_quick.xml
+
+        The first one installs Clover in Ant. The latter one calls default 'clover.report' target.
+    -->
+
+    <!--
+        Install clover.jar into Ant's classpath. This must be done only once, we recommend installing
+        it manually or via separate 'ant' command call. Without this JAR present in the Ant's classpath,
+        the <javac> task will not be able to find CloverCompilerAdapter class, which is being set by
+        the <clover-setup> task. Do not confuse Ant's classpath with <javac> task's build path - these
+        are two different things.
+    -->
+    <target name="install.clover">
+        <copy todir="${user.home}/.ant/lib" file="../lib/clover.jar"/>
+    </target>
+
+
+    <property name="build.classes" location="build/main"/>
+    <property name="build.testclasses" location="build/test"/>
+    <property name="build.testresults" location="build/test-report"/>
+
+    <property name="junit-jupiter-engine.jar" location="../../lib/junit-jupiter-engine-5.8.2.jar"/>
+    <property name="junit-jupiter-api.jar" location="../../lib/junit-jupiter-api-5.8.2.jar"/>
+	<property name="junit-platform-launcher.jar" location="../../lib/junit-platform-launcher-1.8.2.jar"/>
+	<property name="junit-platform-commons.jar" location="../../lib/junit-platform-commons-1.8.2.jar"/>
+	<property name="junit-platform-engine.jar" location="../../lib/junit-platform-engine-1.8.2.jar"/>
+	
+	    <!-- <property name="junit4.jar" location="lib/junit-4.12.jar"/>  -->
+
+    <!-- <property name="junit.jar" location="../../../lib/junit-jupiter-engine-5.8.2.jar"/> -->
+    <!-- <property name="hamcrest.jar" location="lib/hamcrest-core-1.3.jar"/> -->
+    <property name="hamcrest.jar" location="lib/hamcrest-2.2.jar"/> 
+    <!-- Ensure you have copied clover.jar to this location by calling install.clover target -->
+    <property name="clover.jar" location="${user.home}/.ant/lib/clover.jar"/>
+
+    <path id="build.classpath">
+        <pathelement path="${clover.jar}"/>
+        <pathelement location="${build.classes}"/>
+    </path>
+
+    <path id="testbuild.classpath">
+        <path refid="build.classpath"/>
+	<!-- <pathelement location="${junit4.jar}"/>  -->
+        <pathelement location="${junit-jupiter-engine.jar}"/>
+        <pathelement location="${junit-jupiter-api.jar}"/>
+    	<pathelement location="${junit-platform-launcher.jar}"/>
+    	<pathelement location="${junit-platform-commons.jar}"/>
+    	<pathelement location="${junit-platform-engine.jar}"/>
+        <pathelement location="${hamcrest.jar}"/>
+        <pathelement location="${build.testclasses}"/>
+		<fileset dir="../../coveragelib">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${ant.home}/lib" includes="*.jar" />
+		<fileset dir="${user.home}/.m2/repository" casesensitive="yes">
+			<include name="**/*.jar" />
+		</fileset>    	
+    </path>
+
+    <property name="clover.db" location="build/clover/db/clover.db"/>
+
+	<echo message="testbuild.classpath is ${toString:testbuild.classpath}" />
+    <!-- Import Clover's tasks -->
+    <taskdef resource="cloverlib.xml"/>
+
+    <target name="with.clover">
+	    <clover-setup initstring="${clover.db}"/>
+    </target>
+
+    <target name="compile" depends="with.clover">
+        <mkdir dir="${build.classes}"/>
+        <javac srcdir="src/main/java" destdir="${build.classes}" classpathref="build.classpath" includeantruntime="false"/>
+
+        <mkdir dir="${build.testclasses}"/>
+        <javac srcdir="src/test/java" destdir="${build.testclasses}" classpathref="testbuild.classpath" includeantruntime="false"/>
+    </target>
+
+    <target name="test" depends="compile">
+        <mkdir dir="${build.testresults}"/>
+		<junitlauncher haltOnFailure="true" printSummary="true" >
+			<classpath refid="testbuild.classpath" />
+			<testclasses outputdir="${build.testresults}">
+				<fileset dir="build/test">
+					<include name="**/*Test.class" />
+				</fileset>
+				<listener type="legacy-xml" sendSysOut="true" sendSysErr="true" />
+				<listener type="legacy-plain" sendSysOut="true" />
+			</testclasses>
+		</junitlauncher>
+ <!--
+        <junit fork="yes" printsummary="true" showoutput="true">
+            <classpath refid="testbuild.classpath"/>
+            <formatter type="xml"/>
+            <batchtest fork="yes" todir="${build.testresults}">
+                <fileset dir="${build.testclasses}" includes="**/*Test.*"/>
+            </batchtest>
+        </junit>
+-->      
+    </target>
+
+    <target name="clover.report" depends="test">
+	    <clover-html-report outdir="build/clover_html" title="Clover Demo" initstring="${clover.db}"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
+</project>

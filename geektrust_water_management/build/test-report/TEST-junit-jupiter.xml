@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="JUnit Jupiter" tests="51" skipped="0" failures="0" errors="0" time="0.696" hostname="navin-Aspire-xxxx" timestamp="2022-03-23T21:25:38">
+<properties>
+<property name="file.encoding" value="UTF-8"/>
+<property name="file.separator" value="/"/>
+<property name="java.class.path" value="/home/navin/eclipse-workspace/geektrust/geektrust_water_management/build/main:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/build/test:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-antlr.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-apache-bcel.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-apache-bsf.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-apache-log4j.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-apache-oro.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-apache-regexp.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-apache-resolver.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-apache-xalan2.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-commons-logging.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-commons-net.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-imageio.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-jai.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-javamail.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-jdepend.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-jmf.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-jsch.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-junit.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-junit4.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-junitlauncher.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-launcher.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-netrexx.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-swing.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-testutil.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant-xz.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/ant.jar:/home/navin/eclipse-workspace/geektrust/geektrust_water_management/apache-ant-1.10.12/lib/junit-platform-console-standalone-1.8.2.jar"/>
+<property name="java.class.version" value="61.0"/>
+<property name="java.home" value="/usr/lib/jvm/java-17-openjdk-amd64"/>
+<property name="java.io.tmpdir" value="/tmp"/>
+<property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+<property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+<property name="java.runtime.version" value="17.0.2+8-Ubuntu-120.04"/>
+<property name="java.specification.name" value="Java Platform API Specification"/>
+<property name="java.specification.vendor" value="Oracle Corporation"/>
+<property name="java.specification.version" value="17"/>
+<property name="java.vendor" value="Private Build"/>
+<property name="java.vendor.url" value="Unknown"/>
+<property name="java.vendor.url.bug" value="Unknown"/>
+<property name="java.version" value="17.0.2"/>
+<property name="java.version.date" value="2022-01-18"/>
+<property name="java.vm.compressedOopsMode" value="32-bit"/>
+<property name="java.vm.info" value="mixed mode, sharing"/>
+<property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+<property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+<property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+<property name="java.vm.specification.version" value="17"/>
+<property name="java.vm.vendor" value="Private Build"/>
+<property name="java.vm.version" value="17.0.2+8-Ubuntu-120.04"/>
+<property name="jdk.debug" value="release"/>
+<property name="line.separator" value="
+"/>
+<property name="native.encoding" value="UTF-8"/>
+<property name="os.arch" value="amd64"/>
+<property name="os.name" value="Linux"/>
+<property name="os.version" value="5.11.0-36-generic"/>
+<property name="path.separator" value=":"/>
+<property name="sun.arch.data.model" value="64"/>
+<property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-amd64/lib"/>
+<property name="sun.cpu.endian" value="little"/>
+<property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+<property name="sun.java.command" value="org.junit.platform.console.ConsoleLauncher --scan-classpath --reports-dir build/test-report"/>
+<property name="sun.java.launcher" value="SUN_STANDARD"/>
+<property name="sun.jnu.encoding" value="UTF-8"/>
+<property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+<property name="user.country" value="US"/>
+<property name="user.dir" value="/home/navin/eclipse-workspace/geektrust/geektrust_water_management"/>
+<property name="user.home" value="/home/navin"/>
+<property name="user.language" value="en"/>
+<property name="user.name" value="navin"/>
+<property name="user.timezone" value="Asia/Kolkata"/>
+</properties>
+<testcase name="testGetRate()" classname="test.java.watermgmt.TankerRateTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.TankerRateTest]/[method:testGetRate()]
+display-name: testGetRate()
+]]></system-out>
+</testcase>
+<testcase name="allCommands()" classname="test.java.watermgmt.AddGuestsCommandTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.AddGuestsCommandTest]/[method:allCommands()]
+display-name: allCommands()
+]]></system-out>
+</testcase>
+<testcase name="testGetRate()" classname="test.java.watermgmt.SlabIntervalTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.SlabIntervalTest]/[method:testGetRate()]
+display-name: testGetRate()
+]]></system-out>
+</testcase>
+<testcase name="testGetRate()" classname="test.java.watermgmt.CorporationRateTest" time="0.004">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.CorporationRateTest]/[method:testGetRate()]
+display-name: testGetRate()
+]]></system-out>
+</testcase>
+<testcase name="testApartmentBaseIntegerIntegerDouble()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.ApartmentBaseTest]/[method:testApartmentBaseIntegerIntegerDouble()]
+display-name: testApartmentBaseIntegerIntegerDouble()
+]]></system-out>
+</testcase>
+<testcase name="test3BHK()" classname="test.java.watermgmt.BillCommandTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.BillCommandTest]/[method:test3BHK()]
+display-name: test3BHK()
+]]></system-out>
+</testcase>
+<testcase name="testAllotRatio()" classname="test.java.watermgmt.AllotWaterCommandTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.AllotWaterCommandTest]/[method:testAllotRatio()]
+display-name: testAllotRatio()
+]]></system-out>
+</testcase>
+<testcase name="testGetRate()" classname="test.java.watermgmt.BorewellRateTest" time="0.147">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.BorewellRateTest]/[method:testGetRate()]
+display-name: testGetRate()
+]]></system-out>
+</testcase>
+<testcase name="testGetCost()" classname="test.java.watermgmt.SlabIntervalTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.SlabIntervalTest]/[method:testGetCost()]
+display-name: testGetCost()
+]]></system-out>
+</testcase>
+<testcase name="testGetCost()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.ApartmentBaseTest]/[method:testGetCost()]
+display-name: testGetCost()
+]]></system-out>
+</testcase>
+<testcase name="testApartmentBaseIntegerInteger()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.ApartmentBaseTest]/[method:testApartmentBaseIntegerInteger()]
+display-name: testApartmentBaseIntegerInteger()
+]]></system-out>
+</testcase>
+<testcase name="testApartment3BHKIntegerString()" classname="test.java.watermgmt.Apartment3BHKTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.Apartment3BHKTest]/[method:testApartment3BHKIntegerString()]
+display-name: testApartment3BHKIntegerString()
+]]></system-out>
+</testcase>
+<testcase name="testGetLitresPerson()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.ApartmentBaseTest]/[method:testGetLitresPerson()]
+display-name: testGetLitresPerson()
+]]></system-out>
+</testcase>
+<testcase name="testCloneIntegerDouble()" classname="test.java.watermgmt.Apartment2BHKTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.Apartment2BHKTest]/[method:testCloneIntegerDouble()]
+display-name: testCloneIntegerDouble()
+]]></system-out>
+</testcase>
+<testcase name="testGetRatio()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.ApartmentBaseTest]/[method:testGetRatio()]
+display-name: testGetRatio()
+]]></system-out>
+</testcase>
+<testcase name="checkInput()" classname="test.java.watermgmt.CommandParserTest" time="0.039">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.CommandParserTest]/[method:checkInput()]
+display-name: checkInput()
+]]></system-out>
+</testcase>
+<testcase name="testCheckValidType()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.ApartmentBaseTest]/[method:testCheckValidType()]
+display-name: testCheckValidType()
+]]></system-out>
+</testcase>
+<testcase name="testGetDefaultLitres()" classname="test.java.watermgmt.Apartment3BHKTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.Apartment3BHKTest]/[method:testGetDefaultLitres()]
+display-name: testGetDefaultLitres()
+]]></system-out>
+</testcase>
+<testcase name="testGetDefaultLitres()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.ApartmentBaseTest]/[method:testGetDefaultLitres()]
+display-name: testGetDefaultLitres()
+]]></system-out>
+</testcase>
+<testcase name="testApartment2BHKIntegerDouble()" classname="test.java.watermgmt.Apartment2BHKTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.Apartment2BHKTest]/[method:testApartment2BHKIntegerDouble()]
+display-name: testApartment2BHKIntegerDouble()
+]]></system-out>
+</testcase>
+<testcase name="testMain()" classname="test.java.watermgmt.WaterManagementTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.WaterManagementTest]/[method:testMain()]
+display-name: testMain()
+]]></system-out>
+</testcase>
+<testcase name="testParseCommand()" classname="test.java.watermgmt.BillCommandTest" time="0.005">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.BillCommandTest]/[method:testParseCommand()]
+display-name: testParseCommand()
+]]></system-out>
+</testcase>
+<testcase name="testAllCommands()" classname="test.java.watermgmt.Apartment2BHKTest" time="0.007">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.Apartment2BHKTest]/[method:testAllCommands()]
+display-name: testAllCommands()
+]]></system-out>
+</testcase>
+<testcase name="testGetLitres()" classname="test.java.watermgmt.TankerRateTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.TankerRateTest]/[method:testGetLitres()]
+display-name: testGetLitres()
+]]></system-out>
+</testcase>
+<testcase name="testParse()" classname="test.java.watermgmt.CommandParserTest" time="0.038">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.CommandParserTest]/[method:testParse()]
+display-name: testParse()
+]]></system-out>
+</testcase>
+<testcase name="testParseCommand()" classname="test.java.watermgmt.AllotWaterCommandTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.AllotWaterCommandTest]/[method:testParseCommand()]
+display-name: testParseCommand()
+]]></system-out>
+</testcase>
+<testcase name="testAllotAptType()" classname="test.java.watermgmt.AllotWaterCommandTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.AllotWaterCommandTest]/[method:testAllotAptType()]
+display-name: testAllotAptType()
+]]></system-out>
+</testcase>
+<testcase name="testApartment2BHKIntegerString()" classname="test.java.watermgmt.Apartment2BHKTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.Apartment2BHKTest]/[method:testApartment2BHKIntegerString()]
+display-name: testApartment2BHKIntegerString()
+]]></system-out>
+</testcase>
+<testcase name="testApartmentBaseIntegerIntegerString()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.ApartmentBaseTest]/[method:testApartmentBaseIntegerIntegerString()]
+display-name: testApartmentBaseIntegerIntegerString()
+]]></system-out>
+</testcase>
+<testcase name="testGetDefaultPeople()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.ApartmentBaseTest]/[method:testGetDefaultPeople()]
+display-name: testGetDefaultPeople()
+]]></system-out>
+</testcase>
+<testcase name="allCommands()" classname="test.java.watermgmt.BillCommandTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.BillCommandTest]/[method:allCommands()]
+display-name: allCommands()
+]]></system-out>
+</testcase>
+<testcase name="testEqualsObject()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.ApartmentBaseTest]/[method:testEqualsObject()]
+display-name: testEqualsObject()
+]]></system-out>
+</testcase>
+<testcase name="testGetEnd()" classname="test.java.watermgmt.SlabIntervalTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.SlabIntervalTest]/[method:testGetEnd()]
+display-name: testGetEnd()
+]]></system-out>
+</testcase>
+<testcase name="testGetLitres()" classname="test.java.watermgmt.BorewellRateTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.BorewellRateTest]/[method:testGetLitres()]
+display-name: testGetLitres()
+]]></system-out>
+</testcase>
+<testcase name="testHashCode()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.ApartmentBaseTest]/[method:testHashCode()]
+display-name: testHashCode()
+]]></system-out>
+</testcase>
+<testcase name="testGetLitres()" classname="test.java.watermgmt.CorporationRateTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.CorporationRateTest]/[method:testGetLitres()]
+display-name: testGetLitres()
+]]></system-out>
+</testcase>
+<testcase name="testSlabInterval()" classname="test.java.watermgmt.SlabIntervalTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.SlabIntervalTest]/[method:testSlabInterval()]
+display-name: testSlabInterval()
+]]></system-out>
+</testcase>
+<testcase name="allCommands()" classname="test.java.watermgmt.AllotWaterCommandTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.AllotWaterCommandTest]/[method:allCommands()]
+display-name: allCommands()
+]]></system-out>
+</testcase>
+<testcase name="testGetDaysMonth()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.ApartmentBaseTest]/[method:testGetDaysMonth()]
+display-name: testGetDaysMonth()
+]]></system-out>
+</testcase>
+<testcase name="testAddPeople()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.ApartmentBaseTest]/[method:testAddPeople()]
+display-name: testAddPeople()
+]]></system-out>
+</testcase>
+<testcase name="testCloneIntegerDouble()" classname="test.java.watermgmt.Apartment3BHKTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.Apartment3BHKTest]/[method:testCloneIntegerDouble()]
+display-name: testCloneIntegerDouble()
+]]></system-out>
+</testcase>
+<testcase name="testGetRatioStr()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.ApartmentBaseTest]/[method:testGetRatioStr()]
+display-name: testGetRatioStr()
+]]></system-out>
+</testcase>
+<testcase name="testGetTotalLitres()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.ApartmentBaseTest]/[method:testGetTotalLitres()]
+display-name: testGetTotalLitres()
+]]></system-out>
+</testcase>
+<testcase name="testApartment3BHKIntegerDouble()" classname="test.java.watermgmt.Apartment3BHKTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.Apartment3BHKTest]/[method:testApartment3BHKIntegerDouble()]
+display-name: testApartment3BHKIntegerDouble()
+]]></system-out>
+</testcase>
+<testcase name="testApartment3BHKDefaultCost()" classname="test.java.watermgmt.Apartment3BHKTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.Apartment3BHKTest]/[method:testApartment3BHKDefaultCost()]
+display-name: testApartment3BHKDefaultCost()
+]]></system-out>
+</testcase>
+<testcase name="testClone()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.ApartmentBaseTest]/[method:testClone()]
+display-name: testClone()
+]]></system-out>
+</testcase>
+<testcase name="testGetDefaultLitres()" classname="test.java.watermgmt.Apartment2BHKTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.Apartment2BHKTest]/[method:testGetDefaultLitres()]
+display-name: testGetDefaultLitres()
+]]></system-out>
+</testcase>
+<testcase name="testAllCommands()" classname="test.java.watermgmt.Apartment3BHKTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.Apartment3BHKTest]/[method:testAllCommands()]
+display-name: testAllCommands()
+]]></system-out>
+</testcase>
+<testcase name="test2BHK()" classname="test.java.watermgmt.BillCommandTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.BillCommandTest]/[method:test2BHK()]
+display-name: test2BHK()
+]]></system-out>
+</testcase>
+<testcase name="testApartment2BHKDefaultCost()" classname="test.java.watermgmt.Apartment2BHKTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.Apartment2BHKTest]/[method:testApartment2BHKDefaultCost()]
+display-name: testApartment2BHKDefaultCost()
+]]></system-out>
+</testcase>
+<testcase name="testParseCommand()" classname="test.java.watermgmt.AddGuestsCommandTest" time="0.004">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:test.java.watermgmt.AddGuestsCommandTest]/[method:testParseCommand()]
+display-name: testParseCommand()
+]]></system-out>
+</testcase>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]
+display-name: JUnit Jupiter
+]]></system-out>
+</testsuite>
