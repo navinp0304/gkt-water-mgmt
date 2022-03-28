@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.java.watermgmt.AllotWaterCommandTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-03-28T09:33:06" hostname="navin-Aspire-xxxx" time="0.044">
+  <properties/>
+  <testcase name="testAllotAptType()" classname="test.java.watermgmt.AllotWaterCommandTest" time="0.009"/>
+  <testcase name="allCommands()" classname="test.java.watermgmt.AllotWaterCommandTest" time="0.008"/>
+  <testcase name="testParseCommand()" classname="test.java.watermgmt.AllotWaterCommandTest" time="0.007"/>
+  <testcase name="testAllotRatio()" classname="test.java.watermgmt.AllotWaterCommandTest" time="0.006"/>
+  <system-out><![CDATA[4200 15100
+4500 13625
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

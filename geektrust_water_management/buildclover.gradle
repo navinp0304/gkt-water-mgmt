@@ -1,0 +1,83 @@
+/*
+plugins {
+    id 'com.bmuschko.clover'
+    id 'java'
+}
+
+*/
+
+// run gradle -b buildclover.gradle
+
+plugins {
+  id "java"
+  id "com.bmuschko.clover" version "3.0.3"
+}
+
+
+
+
+//apply from: './deps.gradle'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+	/*
+    maven {
+        url = uri('https://repo.maven.apache.org/maven2/')
+    }
+	*/
+}
+
+ext.junitPlatformVersion = '1.8.2'
+ext.junitJupiterVersion  = '5.8.2'
+
+dependencies {
+    // JUnit Jupiter API and TestEngine implementation
+    
+    implementation "org.junit.jupiter:junit-jupiter:${junitJupiterVersion}"
+
+/*
+   testImplementation("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
+   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+*/
+    //junit 5
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher:${junitPlatformVersion}") {
+        because 'allows tests to run from IDEs that bundle older version of launcher'
+    }
+    
+    
+    clover "org.openclover:clover:4.4.1"
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+
+
+sourceCompatibility = '1.8'
+
+clover {
+    report {
+        json = true
+        html = true
+        pdf = true
+
+        // Test support for Clover's JUnit results coverage reporting
+        //testResultsDir = project.tasks.getByName('test').reports.junitXml.destination
+        //testResultsInclude = 'TEST-*.xml'
+        //println "clover sourceSets is ${sourceSets} |  ${sourceSets.main} | ${sourceSets.main.java} | ${sourceSets.main.java.srcDirs}"
+    }
+
+}
+/*
+sourceSets {
+	main {
+		java {
+			srcDirs = ['src']
+		}
+	}
+} 
+*/ 
+

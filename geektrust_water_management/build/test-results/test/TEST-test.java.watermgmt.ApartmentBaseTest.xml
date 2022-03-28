@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.java.watermgmt.ApartmentBaseTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2022-03-28T09:33:06" hostname="navin-Aspire-xxxx" time="0.115">
+  <properties/>
+  <testcase name="testApartmentBaseIntegerIntegerString()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.005"/>
+  <testcase name="testGetRatio()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.005"/>
+  <testcase name="testGetDefaultLitres()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.003"/>
+  <testcase name="testGetLitresPerson()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.004"/>
+  <testcase name="testGetDefaultPeople()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.003"/>
+  <testcase name="testApartmentBaseIntegerInteger()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.003"/>
+  <testcase name="testClone()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.004"/>
+  <testcase name="testCheckValidType()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.003"/>
+  <testcase name="testGetCost()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.005"/>
+  <testcase name="testEqualsObject()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.004"/>
+  <testcase name="testAddPeople()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.003"/>
+  <testcase name="testHashCode()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.007"/>
+  <testcase name="testGetDaysMonth()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.006"/>
+  <testcase name="testGetTotalLitres()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.005"/>
+  <testcase name="testApartmentBaseIntegerIntegerDouble()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.003"/>
+  <testcase name="testGetRatioStr()" classname="test.java.watermgmt.ApartmentBaseTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

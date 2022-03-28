@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CommandParserTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">geektrust_water_management</a> &gt; <a href="index.source.html" class="el_package">test.java.watermgmt</a> &gt; <span class="el_source">CommandParserTest.java</span></div><h1>CommandParserTest.java</h1><pre class="source lang-java linenums">package test.java.watermgmt;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.io.PrintStream;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import main.java.watermgmt.ApartmentBase;
+import main.java.watermgmt.CommandParser;
+
+<span class="fc" id="L15">class CommandParserTest {</span>
+	CommandParser cmd;
+	ApartmentBase obj;
+
+	@BeforeEach
+	void setup() {
+<span class="fc" id="L21">		cmd = new CommandParser();</span>
+<span class="fc" id="L22">		obj = null;</span>
+<span class="fc" id="L23">	}</span>
+
+	@Test
+	void checkInput() {
+<span class="fc" id="L27">		String data = &quot;ALLOT_WATER 2 1:2\nADD_GUESTS 10\nBILL\n&quot;;</span>
+<span class="fc" id="L28">		InputStream stdin = System.in;</span>
+<span class="fc" id="L29">		PrintStream stdout = System.out;</span>
+<span class="fc" id="L30">		ByteArrayOutputStream outContent = new ByteArrayOutputStream();</span>
+<span class="fc" id="L31">		System.setOut(new PrintStream(outContent));</span>
+<span class="fc" id="L32">		System.setIn(new ByteArrayInputStream(data.getBytes()));</span>
+<span class="fc" id="L33">		cmd.run();</span>
+
+<span class="fc" id="L35">		System.setIn(stdin);</span>
+<span class="fc" id="L36">		System.setOut(stdout);</span>
+<span class="fc" id="L37">		assertEquals(outContent.toString().trim(), &quot;3900 12700&quot;);</span>
+<span class="fc" id="L38">	}</span>
+
+	@Test
+	void testParse() {
+		try {
+<span class="nc" id="L43">			obj = cmd.parse(null);</span>
+<span class="fc" id="L44">		} catch (IllegalArgumentException ex) {</span>
+<span class="fc" id="L45">			assertEquals(ex.getMessage(), &quot;arg = null&quot;);</span>
+<span class="nc" id="L46">		}</span>
+		try {
+<span class="nc" id="L48">			obj = cmd.parse(&quot;&quot;);</span>
+<span class="fc" id="L49">		} catch (IllegalArgumentException ex) {</span>
+<span class="fc" id="L50">			assertEquals(ex.getMessage(), &quot;arg = empty&quot;);</span>
+<span class="nc" id="L51">		}</span>
+
+		try {
+<span class="nc" id="L54">			obj = cmd.parse(&quot;junk&quot;);</span>
+<span class="fc" id="L55">		} catch (IllegalArgumentException ex) {</span>
+<span class="fc" id="L56">			assertEquals(ex.getMessage(), &quot;Wrong Command : Ignoring&quot;);</span>
+<span class="nc" id="L57">		}</span>
+		try {
+<span class="nc" id="L59">			obj = cmd.parse(&quot;BILL&quot;);</span>
+<span class="fc" id="L60">		} catch (IllegalArgumentException ex) {</span>
+<span class="fc" id="L61">			assertEquals(ex.getMessage(),</span>
+					&quot;Apartment not initialized with ALLOT_WATER command before calling BILL command&quot;);
+<span class="nc" id="L63">		}</span>
+
+		try {
+<span class="nc" id="L66">			obj = cmd.parse(&quot;ADD_GUESTS&quot;);</span>
+<span class="fc" id="L67">		} catch (IllegalArgumentException ex) {</span>
+<span class="fc" id="L68">			assertEquals(ex.getMessage(),</span>
+					&quot;Apartment not initialized with ALLOT_WATER command before calling ADD_GUESTS command&quot;);
+<span class="nc" id="L70">		}</span>
+		try {
+<span class="nc" id="L72">			obj = cmd.parse(&quot;ALLOC_WATER&quot;);</span>
+<span class="fc" id="L73">		} catch (IllegalArgumentException ex) {</span>
+<span class="fc" id="L74">			assertEquals(ex.getMessage(), &quot;Wrong Command : Ignoring&quot;);</span>
+<span class="nc" id="L75">		}</span>
+		try {
+<span class="nc" id="L77">			obj = cmd.parse(&quot;ADD_GUESTS 10&quot;);</span>
+<span class="fc" id="L78">		} catch (IllegalArgumentException ex) {</span>
+<span class="fc" id="L79">			assertEquals(ex.getMessage(),</span>
+					&quot;Apartment not initialized with ALLOT_WATER command before calling ADD_GUESTS command&quot;);
+<span class="nc" id="L81">		}</span>
+		try {
+<span class="nc" id="L83">			obj = cmd.parse(&quot;BILL&quot;);</span>
+<span class="fc" id="L84">		} catch (IllegalArgumentException ex) {</span>
+<span class="fc" id="L85">			assertEquals(ex.getMessage(),</span>
+					&quot;Apartment not initialized with ALLOT_WATER command before calling BILL command&quot;);
+<span class="nc" id="L87">		}</span>
+		try {
+<span class="nc" id="L89">			obj = cmd.parse(&quot;ALLOT_WATER&quot;);</span>
+<span class="fc" id="L90">		} catch (IllegalArgumentException ex) {</span>
+<span class="fc" id="L91">			assertEquals(ex.getMessage(), &quot;string arg length!=3&quot;);</span>
+<span class="nc" id="L92">		}</span>
+
+<span class="fc" id="L94">		obj = cmd.parse(&quot;ALLOT_WATER 2 1:2&quot;);</span>
+<span class="fc" id="L95">		assertNotNull(obj);</span>
+
+		try {
+<span class="nc" id="L98">			obj = cmd.parse(&quot;ALLOT_WATER 2 1:2&quot;);</span>
+<span class="fc" id="L99">		} catch (IllegalArgumentException ex) {</span>
+<span class="fc" id="L100">			assertEquals(ex.getMessage(),</span>
+					&quot;Apartment already initialized with ALLOT_WATER command, cannot multiple initialize.&quot;);
+<span class="nc" id="L102">		}</span>
+
+<span class="fc" id="L104">		obj = cmd.parse(&quot;ADD_GUESTS 11&quot;);</span>
+<span class="fc" id="L105">		assertNotNull(obj);</span>
+<span class="fc" id="L106">		assertEquals(obj.getTotalLitres() / (obj.getDaysMonth() * obj.getLitresPerson()), 14);</span>
+
+<span class="fc" id="L108">		obj = cmd.parse(&quot;BILL&quot;);</span>
+<span class="pc bpc" id="L109" title="1 of 2 branches missed.">		if(obj!=null) {</span>
+<span class="nc" id="L110">			assertEquals(obj.getTotalLitres(), 4200, 1e-4);</span>
+<span class="nc" id="L111">			assertEquals(obj.getCost(), 15100, 1e-4);</span>
+		}
+
+<span class="fc" id="L114">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
