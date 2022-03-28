@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.java.watermgmt.BillCommandTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-03-28T09:33:06" hostname="navin-Aspire-xxxx" time="0.033">
+  <properties/>
+  <testcase name="test2BHK()" classname="test.java.watermgmt.BillCommandTest" time="0.007"/>
+  <testcase name="test3BHK()" classname="test.java.watermgmt.BillCommandTest" time="0.004"/>
+  <testcase name="allCommands()" classname="test.java.watermgmt.BillCommandTest" time="0.007"/>
+  <testcase name="testParseCommand()" classname="test.java.watermgmt.BillCommandTest" time="0.007"/>
+  <system-out><![CDATA[900 1200
+4200 15100
+1500 1950
+4500 13450
+4200 15100
+4500 13450
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
