@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.java.watermgmt.WaterManagementTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-28T09:33:07" hostname="navin-Aspire-xxxx" time="0.006">
-  <properties/>
-  <testcase name="testMain()" classname="test.java.watermgmt.WaterManagementTest" time="0.006"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
