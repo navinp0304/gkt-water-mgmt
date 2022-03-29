@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.java.watermgmt.CommandParserTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-03-28T09:33:06" hostname="navin-Aspire-xxxx" time="0.029">
-  <properties/>
-  <testcase name="testParse()" classname="test.java.watermgmt.CommandParserTest" time="0.007"/>
-  <testcase name="checkInput()" classname="test.java.watermgmt.CommandParserTest" time="0.015"/>
-  <system-out><![CDATA[4200 15100
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
