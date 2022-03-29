@@ -28,7 +28,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<!-- This is the main class of your program which will be executed-->
-							<mainClass>main.java.watermgmt.WaterManagement.main</mainClass>
+							<mainClass>main.java.watermgmt.WaterManagement</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
