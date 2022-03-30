@@ -9,7 +9,7 @@ public class WaterManagement {
 
 	public static void main(String[] args) {
 		String filename = args[0];
-		filename = filename.strip();
+		filename = filename.trim();
 		if(filename.length()==0) {
 			return;
 		}

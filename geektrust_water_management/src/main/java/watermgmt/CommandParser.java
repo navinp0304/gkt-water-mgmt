@@ -17,7 +17,7 @@ public class CommandParser {
 	public ApartmentBase parse(String s) {
 		if (s == null)
 			throw new IllegalArgumentException("arg = null");
-		String line = s.strip();
+		String line = s.trim();
 		if (line == "")
 			throw new IllegalArgumentException("arg = empty");
 

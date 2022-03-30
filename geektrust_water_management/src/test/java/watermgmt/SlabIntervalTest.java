@@ -2,6 +2,7 @@ package test.java.watermgmt;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -14,7 +15,7 @@ class SlabIntervalTest {
 
 	@BeforeEach
 	void setup() {
-		lobj = List.of(new SlabInterval(0.0, 500.0, 2.0), new SlabInterval(501.0, 1500.0, 3.0),
+		lobj = Arrays.asList(new SlabInterval(0.0, 500.0, 2.0), new SlabInterval(501.0, 1500.0, 3.0),
 				new SlabInterval(1501.0, 3000.0, 5.0), new SlabInterval(3001.0, Double.MAX_VALUE, 8.0));
 	}
 
