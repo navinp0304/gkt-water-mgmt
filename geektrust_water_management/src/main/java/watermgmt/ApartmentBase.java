@@ -91,8 +91,9 @@ public abstract class ApartmentBase {
 		double totcost = 0.0;
 
 		for (IRateCalculator rateobj : rateList) {
-			//System.out.println("dbg "+ rateobj.getLitres(this)+" "+this + " "+this.getRatio()+" "+rateobj.getRate(rateobj.getLitres(this)));
+		//	System.out.println("dbg "+ rateobj.getLitres(this)+" "+this + " "+this.getRatio()+" "+rateobj.getRate(rateobj.getLitres(this)));
 			totcost += rateobj.getRate(rateobj.getLitres(this));
+		//	System.out.println("totcost = "+totcost);
 		}
 
 		return totcost;

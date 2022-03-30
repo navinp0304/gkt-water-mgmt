@@ -9,7 +9,7 @@ public class BillCommand implements ICommand {
 			return obj;
 		// Print the <TOTAL_WATER_CONSUMED_IN_LITERS> <TOTAL_COST>
 		long totlitres = Math.round(obj.getTotalLitres());
-		long totcost = Math.round(obj.getCost());
+		long totcost = (long) Math.ceil(obj.getCost());
 		System.out.println(Long.toString(totlitres) + " " + Long.toString(totcost));
 		return obj;
 	}
