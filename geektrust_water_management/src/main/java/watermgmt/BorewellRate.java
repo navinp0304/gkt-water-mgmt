@@ -12,7 +12,7 @@ public class BorewellRate implements IRateCalculator {
 	public Double getLitres(ApartmentBase aptObj) {
 		if (aptObj == null)
 			throw new IllegalArgumentException("null argument");
-		return aptObj.getDefaultLitres() * (1.0 - aptObj.getRatio());
+		return aptObj.getDefaultLitres()  -  (double)Math.round(aptObj.getDefaultLitres()*aptObj.getRatio());
 	}
 
 }
