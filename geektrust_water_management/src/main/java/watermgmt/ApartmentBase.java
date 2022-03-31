@@ -1,7 +1,6 @@
 package main.java.watermgmt;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -29,12 +28,13 @@ public abstract class ApartmentBase {
 	/**
 	 * type is the key , 2 for 2BHK and 3 for 3BHK
 	 */
-	public static HashMap<Integer,ApartmentBase> validTypes =
-			new HashMap<Integer, ApartmentBase>() {{
-				    put(2,new Apartment2BHK(3,3,0.0));
-				    put(3,new Apartment3BHK(5,5,0.0));
-				    //put( 4,new Apartment4BHK(7,7,0.0)); followed by a new class Apartment4BHK extending ApartmentBase
-				  }};
+	public static Map<Integer,ApartmentBase> validTypes =
+			                      Map.of(
+			                             2,new Apartment2BHK(3,3,0.0),
+			                             3,new Apartment3BHK(5,5,0.0)
+			                          // 4,new Apartment4BHK(7,7,0.0) followed by a new class Apartment4BHK extending ApartmentBase
+			                         );
+
 
 	List<IRateCalculator> rateList =
 			Arrays.asList(

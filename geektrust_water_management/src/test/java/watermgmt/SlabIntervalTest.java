@@ -15,7 +15,7 @@ class SlabIntervalTest {
 
 	@BeforeEach
 	void setup() {
-		lobj = Arrays.asList(new SlabInterval(0.0, 500.0, 2.0), new SlabInterval(501.0, 1500.0, 3.0),
+		lobj = List.of(new SlabInterval(0.0, 500.0, 2.0), new SlabInterval(501.0, 1500.0, 3.0),
 				new SlabInterval(1501.0, 3000.0, 5.0), new SlabInterval(3001.0, Double.MAX_VALUE, 8.0));
 	}
 

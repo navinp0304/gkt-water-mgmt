@@ -10,7 +10,7 @@ public class TankerRate implements IRateCalculator {
 
 	// @formatter:off
 
-	private List<SlabInterval> listSlabs = Arrays.asList
+	private List<SlabInterval> listSlabs = List.of
 	(
 		new SlabInterval(0.0, 500.0, 2.0),
 		new SlabInterval(501.0, 1500.0, 3.0),

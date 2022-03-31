@@ -9,7 +9,7 @@ public class WaterManagement {
 
 	public static void main(String[] args) {
 		String filename = args[0];
-		filename = filename.trim();
+		filename = filename.strip();
 		if(filename.length()==0) {
 			return;
 		}
@@ -18,7 +18,7 @@ public class WaterManagement {
 	          instream = new FileInputStream(filename);  
 	          System.setIn(instream);  
 	      } catch (Exception e) {  
-	          System.err.println("Error Occurred.");  
+	          System.err.println("Error Occurred: " +e.getMessage()+ "filename=<"+filename+">");  
 	      }  		
 		CommandParser cmdParser = new CommandParser();
 		cmdParser.run();
