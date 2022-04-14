@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<AparmentConfig>
+
+	<Apartment type="2">
+		<DefaultPeople>3</DefaultPeople>
+	</Apartment>
+	
+	<Apartment type="3">
+		<DefaultPeople>5</DefaultPeople>
+	</Apartment>
+</AparmentConfig>
+	
