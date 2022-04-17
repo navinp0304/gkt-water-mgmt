@@ -1,12 +1,13 @@
 package com.example.geektrust;
 
 import lombok.Data;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 public @Data class RateSummary {
-	private double litres;
-	private double cost;
-	RateSummary(double litres,double cost){
-		this.litres=litres;
-		this.cost=cost;
-	}
+	@NonNull
+	private Double litres;
+	@NonNull
+	private Double cost;
 }

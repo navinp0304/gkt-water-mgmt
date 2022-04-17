@@ -1,12 +1,17 @@
 <?xml version="1.0"?>
-<AparmentConfig>
+<ApartmentConfig>
+	<Apartment>
+		<id>2</id>
+		<residents>3</residents>
+	</Apartment>
 
-	<Apartment type="2">
-		<DefaultPeople>3</DefaultPeople>
+	<Apartment>
+		<id>3</id>
+		<residents>5</residents>
 	</Apartment>
-	
-	<Apartment type="3">
-		<DefaultPeople>5</DefaultPeople>
-	</Apartment>
-</AparmentConfig>
+<PersonLitresPerDay>10</PersonLitresPerDay>	
+<DaysPerMonth>30</DaysPerMonth>
+<CorporationRate>1.0</CorporationRate>
+<BorewellRate>1.5</BorewellRate>
+</ApartmentConfig>
 	

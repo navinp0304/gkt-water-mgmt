@@ -1,9 +1,15 @@
 package com.example.geektrust;
 
-public class CorporationCalculator {
-	private static final double CORPORATION_RATE = 1.0;
-	public RateSummary getCost(Apartment apt) {
-		return new RateSummary(1,1);
+
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public class CorporationCalculator  {
+
+	public static RateSummary getCost(Apartment apt) {
+		Double litres = apt.getResidents() * ApartmentConfig.getPersonLitresMonth() * apt.getRatioCORPORATIONBOREWELL();
+		Double cost = litres * ApartmentConfig.getAptConfig().getCorporationRate();
+		return new RateSummary(litres, cost);
 	}
-	
 }

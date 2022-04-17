@@ -1,11 +1,17 @@
 package com.example.geektrust;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data public class BorewellCalculator implements IRateCalculator {
-	private BorewellCalculator() {}
-	private static final double BOREWELL_RATE = 1.5;
-	public  RateSummary getCost(Apartment apt) {
-		return new RateSummary(BOREWELL_RATE,1);
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@Data
+public class BorewellCalculator  {
+
+	public static RateSummary getCost(Apartment apt) {
+		Double litres = apt.getResidents() * ApartmentConfig.getPersonLitresMonth()
+				* (1.0 - apt.getRatioCORPORATIONBOREWELL());
+		Double cost = litres * ApartmentConfig.getAptConfig().getBorewellRate();
+		return new RateSummary(litres, cost);
 	}
 }

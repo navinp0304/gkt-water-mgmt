@@ -11,9 +11,9 @@ public @Data class SlabInterval {
 		this.rate=rate;
 	}
 	
-	public long getCost(long litres) {
-		long newend   = Math.min(litres, end) ;
-		long totlit   = Math.max(0,newend-start+1);
+	public int getCost(int litres) {
+		int newend   = Math.min(litres, end) ;
+		int totlit   = Math.max(0,newend-start+1);
 		return totlit*rate;
 	}
 }
