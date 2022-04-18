@@ -11,9 +11,11 @@ import lombok.RequiredArgsConstructor;
 public class BorewellCalculator {
 	@NonNull
 	ApartmentConfig aptConfig;
+	@NonNull
+	Apartment apt;
 
 
-	public RateSummary getCost(Apartment apt) {
+	public RateSummary getCost() {
 		Double litres = apt.getResidents() * aptConfig.getPersonLitresMonth()
 				* (1.0 - apt.getRatioCORPORATIONBOREWELL());
 		Double cost = litres * aptConfig.getBorewellRate();

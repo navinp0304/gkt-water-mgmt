@@ -21,9 +21,11 @@ public class TankerCalculator {
 		
 		@NonNull
 		ApartmentConfig aptConfig;
+		@NonNull
+		Apartment apt;
 
 
-	public  RateSummary getCost(Apartment apt) {
+	public  RateSummary getCost() {
 
 		Double totcost = 0.0;
 		Integer slablitres=apt.getGuests()*aptConfig.getPersonLitresMonth();

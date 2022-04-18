@@ -1,16 +1,20 @@
 package com.example.geektrust;
 
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.AccessLevel;
+import lombok.Data;
+import lombok.NonNull;
 
-@NoArgsConstructor(access = AccessLevel.PACKAGE)
+@RequiredArgsConstructor(access = AccessLevel.PACKAGE)
+@Data
 public class AddGuestsCommand  {
-	private  Apartment executeAddGuestsCommand(Apartment obj,int guests) {
-		obj.addGuests(guests);
-		return obj;
-	}
-	public Apartment parseCommand(Apartment apt,String cmd) {
+	@NonNull
+	Apartment apt;
+	@NonNull
+	String cmd;
+	
+	public void parseCommand() {
 		Integer guests = Integer.valueOf(cmd);
-		return executeAddGuestsCommand(apt,guests);
+		apt.addGuests(guests);
 	}
 }

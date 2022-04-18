@@ -10,9 +10,11 @@ import lombok.RequiredArgsConstructor;
 public class CorporationCalculator  {
 	@NonNull
 	ApartmentConfig aptConfig;
+	@NonNull
+	Apartment apt;
 
 
-	public  RateSummary getCost(Apartment apt) {
+	public  RateSummary getCost() {
 		Double litres = apt.getResidents() * aptConfig.getPersonLitresMonth() * apt.getRatioCORPORATIONBOREWELL();
 		Double cost = litres * aptConfig.getCorporationRate();
 		return new RateSummary(litres, cost);
