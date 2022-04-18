@@ -17,7 +17,7 @@ import lombok.AccessLevel;
 
 @XmlRootElement(name = "ApartmentConfig")
 @XmlAccessorType(XmlAccessType.FIELD)
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PACKAGE)
 @Data
 public class ApartmentConfig {
 
@@ -33,34 +33,26 @@ public class ApartmentConfig {
 	private double borewellRate;
 
 	@Getter
-	private static int personLitresMonth;
+	private int personLitresMonth;
+	private Map<Integer, Integer> ResidentsLookup;
+	private final String xmlConfigFile = "src/main/resources/com/example/geektrust/ApartmentConfig.xml";
 
-	@Getter
-	private static ApartmentConfig aptConfig;
-	private static Map<Integer, Integer> ResidentsLookup;
-	private static boolean populated = false;
-	private static final String xmlConfigFile = "src/main/resources/com/example/geektrust/ApartmentConfig.xml";
 
-	private static boolean initConfig() {
-		aptConfig = JAXB.unmarshal(new File(xmlConfigFile), ApartmentConfig.class);
+	public  Integer getResidentsLookup(Integer houseType) {
+		ApartmentConfig aptConfig = JAXB.unmarshal(new File(xmlConfigFile), ApartmentConfig.class);
 		ResidentsLookup = aptConfig.getAptList().stream()
 				.collect(Collectors.toMap(Apartment::getId, Apartment::getResidents));
-		populated = true;
 		personLitresMonth = aptConfig.getPersonLitresPerDay() * aptConfig.getDaysPerMonth();
 		System.out.println(aptConfig.personLitresPerDay + "|" + aptConfig.daysPerMonth);
 		System.out.println(aptConfig.getBorewellRate() + "|" + aptConfig.getCorporationRate());
 
-		return false;
-	}
 
-	public static Integer getResidentsLookup(Integer houseType) {
-		Boolean retval = (!populated && initConfig());
-		return ResidentsLookup.get(houseType) + retval.compareTo(true);
+		return ResidentsLookup.get(houseType);
 	}
 
 	public static void main(String[] args) {
-		initConfig();
-		System.out.println(populated);
+		ApartmentConfig aptConfig = new ApartmentConfig();
+		System.out.println(aptConfig.getResidentsLookup(2));
 
 	}
 

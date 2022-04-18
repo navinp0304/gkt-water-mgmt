@@ -3,13 +3,13 @@ package com.example.geektrust;
 import lombok.NoArgsConstructor;
 import lombok.AccessLevel;
 
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PACKAGE)
 public class AddGuestsCommand  {
-	private static Apartment executeAddGuestsCommand(Apartment obj,int guests) {
+	private  Apartment executeAddGuestsCommand(Apartment obj,int guests) {
 		obj.addGuests(guests);
 		return obj;
 	}
-	public static Apartment parseCommand(Apartment apt,String cmd) {
+	public Apartment parseCommand(Apartment apt,String cmd) {
 		Integer guests = Integer.valueOf(cmd);
 		return executeAddGuestsCommand(apt,guests);
 	}

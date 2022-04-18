@@ -3,15 +3,20 @@ package com.example.geektrust;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 @Data
-public class BorewellCalculator  {
+public class BorewellCalculator {
+	@NonNull
+	ApartmentConfig aptConfig;
 
-	public static RateSummary getCost(Apartment apt) {
-		Double litres = apt.getResidents() * ApartmentConfig.getPersonLitresMonth()
+
+	public RateSummary getCost(Apartment apt) {
+		Double litres = apt.getResidents() * aptConfig.getPersonLitresMonth()
 				* (1.0 - apt.getRatioCORPORATIONBOREWELL());
-		Double cost = litres * ApartmentConfig.getAptConfig().getBorewellRate();
+		Double cost = litres * aptConfig.getBorewellRate();
 		return new RateSummary(litres, cost);
 	}
 }

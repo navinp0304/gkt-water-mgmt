@@ -1,10 +1,12 @@
 package com.example.geektrust;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
+@NoArgsConstructor
 public @Data class Apartment {
 	@NonNull
 	private Integer id;
@@ -14,7 +16,6 @@ public @Data class Apartment {
 	private Double ratioCORPORATIONBOREWELL;
 
 	private int guests = 0;
-
 	public void addGuests(int guests) {
 		this.setGuests(this.getGuests() + guests);
 	}
