@@ -2,12 +2,11 @@ package com.example.geektrust;
 
 
 import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
-public class CorporationCalculator  {
+public class CorporationCalculator implements IRateCalculator {
 	@NonNull
 	ApartmentConfig aptConfig;
 	@NonNull

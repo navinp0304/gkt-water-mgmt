@@ -7,7 +7,7 @@ import lombok.NonNull;
 
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 @Data
-public class AddGuestsCommand  {
+public class AddGuestsCommand {
 	@NonNull
 	Apartment apt;
 	@NonNull

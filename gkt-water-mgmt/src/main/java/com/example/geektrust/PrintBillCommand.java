@@ -1,5 +1,7 @@
 package com.example.geektrust;
 
+import java.util.List;
+
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -11,20 +13,17 @@ public class PrintBillCommand {
 	Apartment apt;
 	@NonNull
 	ApartmentConfig aptconfig;
+	@NonNull
+	List<IRateCalculator> costCalcs;
 
 	public void parseCommand() {
 
-		CorporationCalculator corpCalc = new CorporationCalculator(aptconfig, apt);
-		BorewellCalculator boreCalc = new BorewellCalculator(aptconfig, apt);
-		TankerCalculator tankerCalc = new TankerCalculator(aptconfig, apt);
+		RateSummary tot=new RateSummary(0.0,0.0);
+		for(IRateCalculator obj: costCalcs) {
+			tot=tot.add(obj.getCost());
+		}
 
-		RateSummary rateCorp = corpCalc.getCost();
-		RateSummary rateBore = boreCalc.getCost();
-		RateSummary rateTanker = tankerCalc.getCost();
-
-		int totlitres = rateCorp.getLitres() + rateBore.getLitres() + rateTanker.getLitres();
-		int totcost = rateCorp.getCost() + rateBore.getCost() + rateTanker.getCost();
-		System.out.println(totlitres + " " + totcost);
+		System.out.println(tot.getLitres() + " " + tot.getCost());
 		return;
 	}
 }

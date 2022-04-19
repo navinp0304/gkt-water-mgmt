@@ -10,7 +10,7 @@ public @Data class RateSummary {
 	private Double litres;
 	@NonNull
 	private Double cost;
-	public RateSummary add(RateSummary a,RateSummary b) {
-		return new RateSummary(a.getLitres()+b.getLitres(),a.getCost()+b.getCost());
+	public RateSummary add(RateSummary a) {
+		return new RateSummary(litres+a.getLitres(),cost+a.getCost());
 	}
 }

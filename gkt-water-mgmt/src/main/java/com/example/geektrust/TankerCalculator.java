@@ -1,17 +1,16 @@
 package com.example.geektrust;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import lombok.AccessLevel;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 @Data
-public class TankerCalculator {
+public class TankerCalculator implements IRateCalculator {
 		private  final List<SlabInterval> slabList = 
 			List.of(new SlabInterval(1,500,2),	  
 					new SlabInterval(501,1500,3),					
