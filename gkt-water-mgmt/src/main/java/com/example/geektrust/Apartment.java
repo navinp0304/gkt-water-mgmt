@@ -16,6 +16,7 @@ public @Data class Apartment {
 	private Double ratioCORPORATIONBOREWELL;
 
 	private int guests = 0;
+
 	public void addGuests(int guests) {
 		this.setGuests(this.getGuests() + guests);
 	}

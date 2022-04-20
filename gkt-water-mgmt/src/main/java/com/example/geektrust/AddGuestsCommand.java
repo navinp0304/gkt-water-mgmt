@@ -7,14 +7,15 @@ import lombok.NonNull;
 
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 @Data
-public class AddGuestsCommand {
+public class AddGuestsCommand implements ICommand {
 	@NonNull
 	Apartment apt;
 	@NonNull
 	String cmd;
-	
-	public void parseCommand() {
+
+	public Apartment parseCommand() {
 		Integer guests = Integer.valueOf(cmd);
 		apt.addGuests(guests);
+		return apt;
 	}
 }

@@ -34,20 +34,18 @@ public class ApartmentConfig {
 
 	@Getter
 	private int personLitresMonth;
-	private Map<Integer, Integer> ResidentsLookup;
-	private final String xmlConfigFile = "src/main/resources/com/example/geektrust/ApartmentConfig.xml";
+	private Map<Integer, Integer> residentsLookup;
+	private static final String XMLCONFIGFILE = "src/main/resources/com/example/geektrust/ApartmentConfig.xml";
 
-
-	public  Integer getResidentsLookup(Integer houseType) {
-		ApartmentConfig aptConfig = JAXB.unmarshal(new File(xmlConfigFile), ApartmentConfig.class);
-		ResidentsLookup = aptConfig.getAptList().stream()
+	public Integer getResidentsLookup(Integer houseType) {
+		ApartmentConfig aptConfig = JAXB.unmarshal(new File(XMLCONFIGFILE), ApartmentConfig.class);
+		residentsLookup = aptConfig.getAptList().stream()
 				.collect(Collectors.toMap(Apartment::getId, Apartment::getResidents));
 		personLitresMonth = aptConfig.getPersonLitresPerDay() * aptConfig.getDaysPerMonth();
 		System.out.println(aptConfig.personLitresPerDay + "|" + aptConfig.daysPerMonth);
 		System.out.println(aptConfig.getBorewellRate() + "|" + aptConfig.getCorporationRate());
 
-
-		return ResidentsLookup.get(houseType);
+		return residentsLookup.get(houseType);
 	}
 
 	public static void main(String[] args) {

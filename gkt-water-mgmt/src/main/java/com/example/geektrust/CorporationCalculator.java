@@ -1,6 +1,5 @@
 package com.example.geektrust;
 
-
 import lombok.AccessLevel;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -12,8 +11,7 @@ public class CorporationCalculator implements IRateCalculator {
 	@NonNull
 	Apartment apt;
 
-
-	public  RateSummary getCost() {
+	public RateSummary getCost() {
 		Double litres = apt.getResidents() * aptConfig.getPersonLitresMonth() * apt.getRatioCORPORATIONBOREWELL();
 		Double cost = litres * aptConfig.getCorporationRate();
 		return new RateSummary(litres, cost);
