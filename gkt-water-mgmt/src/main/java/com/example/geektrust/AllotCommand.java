@@ -13,7 +13,7 @@ public class AllotCommand implements ICommand {
 
 	private Apartment createApartment(int type, double ratio) {
 		ApartmentConfig aptConfig = new ApartmentConfig();
-		return new Apartment(type, aptConfig.getResidentsLookup(type), ratio);
+		return new Apartment(type, aptConfig.getResidentsLookup(type), ratio,0);
 	}
 
 	private Double parseRatio(String s) {

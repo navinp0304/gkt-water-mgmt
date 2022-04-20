@@ -1,8 +1,8 @@
 package com.example.geektrust;
 
-import lombok.Data;
 
-public @Data class SlabInterval {
+
+public class SlabInterval {
 	private int start;
 	private int end;
 	private int rate;

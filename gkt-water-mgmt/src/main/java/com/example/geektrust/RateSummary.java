@@ -1,15 +1,15 @@
 package com.example.geektrust;
 
-import lombok.Data;
+import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public @Data class RateSummary {
+public class RateSummary {
 	@NonNull
-	private Double litres;
+	@Getter private Double litres;
 	@NonNull
-	private Double cost;
+	@Getter private Double cost;
 
 	public RateSummary add(RateSummary a) {
 		return new RateSummary(litres + a.getLitres(), cost + a.getCost());

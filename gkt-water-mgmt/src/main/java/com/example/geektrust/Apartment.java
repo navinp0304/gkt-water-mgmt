@@ -1,23 +1,23 @@
 package com.example.geektrust;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 @RequiredArgsConstructor
-@NoArgsConstructor
-public @Data class Apartment {
+public class Apartment {
 	@NonNull
-	private Integer id;
+	@Getter private Integer id;
 	@NonNull
-	private Integer residents;
+	@Getter private Integer residents;
 	@NonNull
-	private Double ratioCORPORATIONBOREWELL;
+	@Getter private Double ratioCORPORATIONBOREWELL;
 
-	private int guests = 0;
+	@NonNull
+	@Getter private int guests;
 
-	public void addGuests(int guests) {
-		this.setGuests(this.getGuests() + guests);
-	}
+
 }

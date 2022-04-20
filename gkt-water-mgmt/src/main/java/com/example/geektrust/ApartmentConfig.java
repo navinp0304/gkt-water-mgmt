@@ -18,19 +18,18 @@ import lombok.AccessLevel;
 @XmlRootElement(name = "ApartmentConfig")
 @XmlAccessorType(XmlAccessType.FIELD)
 @NoArgsConstructor(access = AccessLevel.PACKAGE)
-@Data
 public class ApartmentConfig {
 
 	@XmlElement(name = "Apartment")
-	private List<Apartment> aptList;
+	@Getter private List<Apartment> aptList;
 	@XmlElement(name = "PersonLitresPerDay")
-	private int personLitresPerDay;
+	@Getter private int personLitresPerDay;
 	@XmlElement(name = "DaysPerMonth")
-	private int daysPerMonth;
+	@Getter private int daysPerMonth;
 	@XmlElement(name = "CorporationRate")
-	private double corporationRate;
+	@Getter private double corporationRate;
 	@XmlElement(name = "BorewellRate")
-	private double borewellRate;
+	@Getter private double borewellRate;
 
 	@Getter
 	private int personLitresMonth;

@@ -2,20 +2,19 @@ package com.example.geektrust;
 
 import lombok.RequiredArgsConstructor;
 import lombok.AccessLevel;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NonNull;
 
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
-@Data
 public class AddGuestsCommand implements ICommand {
 	@NonNull
-	Apartment apt;
+	@Getter Apartment apt;
 	@NonNull
-	String cmd;
+	@Getter String cmd;
 
 	public Apartment parseCommand() {
 		Integer guests = Integer.valueOf(cmd);
-		apt.addGuests(guests);
-		return apt;
+		Integer totalguests = apt.getGuests() + guests;
+		return new Apartment(apt.getId(),apt.getResidents(),apt.getRatioCORPORATIONBOREWELL(),totalguests);
 	}
 }

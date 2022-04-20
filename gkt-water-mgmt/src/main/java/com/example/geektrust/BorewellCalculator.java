@@ -6,7 +6,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
-@Data
+
 public class BorewellCalculator implements IRateCalculator {
 	@NonNull
 	ApartmentConfig aptConfig;
