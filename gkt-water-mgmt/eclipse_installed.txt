@@ -1,5 +1,5 @@
 codeMR
-spotbugs
+findbugs and spotbugs
 stan
 jqassistant
 codecity

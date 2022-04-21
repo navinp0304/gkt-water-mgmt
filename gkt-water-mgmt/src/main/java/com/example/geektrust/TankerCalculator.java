@@ -8,13 +8,13 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 public class TankerCalculator implements IRateCalculator {
-	private final List<SlabInterval> slabList = List.of(new SlabInterval(1, 500, 2), new SlabInterval(501, 1500, 3),
+	private final List<SlabInterval> slabList = List.of(new SlabInterval(0, 500, 2), new SlabInterval(501, 1500, 3),
 			new SlabInterval(1501, 3000, 5), new SlabInterval(3001, Integer.MAX_VALUE, 8));
 
 	@NonNull
-	ApartmentConfig aptConfig;
+	private ApartmentConfig aptConfig;
 	@NonNull
-	Apartment apt;
+	private Apartment apt;
 
 	public RateSummary getCost() {
 

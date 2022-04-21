@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<RateCalculators>
+	<BorewellCalculator>
+		<BorewellRate>1.5</BorewellRate>
+	</BorewellCalculator>
+	<CorporationCalculator>
+		<CorporationRate>1.0</CorporationRate>
+	</CorporationCalculator>
+	<TankerCalculator>
+		<SlabInterval>
+			<Start>0</Start>
+			<End>500</End>
+			<Rate>2</Rate>
+		</SlabInterval>
+		<SlabInterval>
+			<Start>501</Start>
+			<End>1500</End>
+			<Rate>3</Rate>
+		</SlabInterval>
+		<SlabInterval>
+			>
+			<Start>1501</Start>
+			<End>3000</End>
+			<Rate>5</Rate>
+		</SlabInterval>
+		<SlabInterval>
+			<Start>3001</Start>
+			<End>2147483647</End>
+			<Rate>8</Rate>
+		</SlabInterval>
+	</TankerCalculator>
+
+</RateCalculators>
+	

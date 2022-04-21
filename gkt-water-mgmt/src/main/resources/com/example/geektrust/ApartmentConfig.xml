@@ -11,7 +11,5 @@
 	</Apartment>
 <PersonLitresPerDay>10</PersonLitresPerDay>	
 <DaysPerMonth>30</DaysPerMonth>
-<CorporationRate>1.0</CorporationRate>
-<BorewellRate>1.5</BorewellRate>
 </ApartmentConfig>
 	

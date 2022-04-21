@@ -1,17 +1,15 @@
 package com.example.geektrust;
 
 import lombok.AccessLevel;
-import lombok.Data;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
-
 public class BorewellCalculator implements IRateCalculator {
 	@NonNull
-	ApartmentConfig aptConfig;
+	private ApartmentConfig aptConfig;
 	@NonNull
-	Apartment apt;
+	private Apartment apt;
 
 	public RateSummary getCost() {
 		Double litres = apt.getResidents() * aptConfig.getPersonLitresMonth()
@@ -19,4 +17,5 @@ public class BorewellCalculator implements IRateCalculator {
 		Double cost = litres * aptConfig.getBorewellRate();
 		return new RateSummary(litres, cost);
 	}
+
 }

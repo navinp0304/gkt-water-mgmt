@@ -10,7 +10,6 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.AccessLevel;
@@ -21,7 +20,7 @@ import lombok.AccessLevel;
 public class ApartmentConfig {
 
 	@XmlElement(name = "Apartment")
-	@Getter private List<Apartment> aptList;
+	@Getter private List<Apartment> apts;
 	@XmlElement(name = "PersonLitresPerDay")
 	@Getter private int personLitresPerDay;
 	@XmlElement(name = "DaysPerMonth")
@@ -34,11 +33,11 @@ public class ApartmentConfig {
 	@Getter
 	private int personLitresMonth;
 	private Map<Integer, Integer> residentsLookup;
-	private static final String XMLCONFIGFILE = "src/main/resources/com/example/geektrust/ApartmentConfig.xml";
+	private static final String APTCONFIGFILE = "src/main/resources/com/example/geektrust/ApartmentConfig.xml";
 
 	public Integer getResidentsLookup(Integer houseType) {
-		ApartmentConfig aptConfig = JAXB.unmarshal(new File(XMLCONFIGFILE), ApartmentConfig.class);
-		residentsLookup = aptConfig.getAptList().stream()
+		ApartmentConfig aptConfig = JAXB.unmarshal(new File(APTCONFIGFILE), ApartmentConfig.class);
+		residentsLookup = aptConfig.getApts().stream()
 				.collect(Collectors.toMap(Apartment::getId, Apartment::getResidents));
 		personLitresMonth = aptConfig.getPersonLitresPerDay() * aptConfig.getDaysPerMonth();
 		System.out.println(aptConfig.personLitresPerDay + "|" + aptConfig.daysPerMonth);
