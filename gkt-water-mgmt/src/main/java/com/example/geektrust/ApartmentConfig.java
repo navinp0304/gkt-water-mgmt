@@ -25,10 +25,6 @@ public class ApartmentConfig {
 	@Getter private int personLitresPerDay;
 	@XmlElement(name = "DaysPerMonth")
 	@Getter private int daysPerMonth;
-	@XmlElement(name = "CorporationRate")
-	@Getter private double corporationRate;
-	@XmlElement(name = "BorewellRate")
-	@Getter private double borewellRate;
 
 	@Getter
 	private int personLitresMonth;
@@ -41,7 +37,7 @@ public class ApartmentConfig {
 				.collect(Collectors.toMap(Apartment::getId, Apartment::getResidents));
 		personLitresMonth = aptConfig.getPersonLitresPerDay() * aptConfig.getDaysPerMonth();
 		System.out.println(aptConfig.personLitresPerDay + "|" + aptConfig.daysPerMonth);
-		System.out.println(aptConfig.getBorewellRate() + "|" + aptConfig.getCorporationRate());
+//		System.out.println(aptConfig.getBorewellRate() + "|" + aptConfig.getCorporationRate());
 
 		return residentsLookup.get(houseType);
 	}
