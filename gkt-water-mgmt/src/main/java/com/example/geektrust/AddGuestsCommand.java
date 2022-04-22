@@ -15,6 +15,6 @@ public class AddGuestsCommand implements ICommand {
 	public Apartment parseCommand() {
 		Integer guests = Integer.valueOf(cmd);
 		Integer totalguests = apt.getGuests() + guests;
-		return new Apartment(apt.getId(),apt.getResidents(),apt.getRatioCORPORATIONBOREWELL(),totalguests);
+		return new Apartment(apt.getId(),apt.getRatioCORPORATIONBOREWELL(),totalguests);
 	}
 }

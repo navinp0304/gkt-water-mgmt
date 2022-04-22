@@ -1,23 +1,31 @@
 package com.example.geektrust;
 
 
+import java.util.Map;
+
 import lombok.Getter;
 
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 
-@RequiredArgsConstructor
+
 public class Apartment {
-	@NonNull
+	private final Map<Integer,Integer> residentLookup=Map.of(2,3,3,5);
+
 	@Getter private Integer id;
-	@NonNull
+	
 	@Getter private Integer residents;
-	@NonNull
+
 	@Getter private Double ratioCORPORATIONBOREWELL;
 
-	@NonNull
 	@Getter private Integer guests;
+	Apartment(Integer id,Double ratio,Integer guests){
+		this.id=id;
+		residents=residentLookup.get(id);
+		this.ratioCORPORATIONBOREWELL=ratio;
+		this.guests=guests;
+	}
 
 
 }
