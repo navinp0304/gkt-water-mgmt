@@ -21,25 +21,27 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PACKAGE)
 public class RateCalculatorConfig {
 
-    //@XmlElementWrapper
-    //@XmlAnyElement(lax=true)
-	//@Getter private ArrayList<IRateCalculator> rateCalculators;
-	
-	//@XmlElement(name = "BorewellCalculator")
-	//@XmlAnyElement(lax=true)
-    //BorewellCalculator rateCalculators;
-	@Getter private ArrayList<IRateCalculator> rateCalculators;
+	// @XmlElementWrapper
+	// @XmlAnyElement(lax=true)
+	// @Getter private ArrayList<IRateCalculator> rateCalculators;
+
+	// @XmlElement(name = "BorewellCalculator")
+	// @XmlAnyElement(lax=true)
+	// BorewellCalculator rateCalculators;
+	@Getter
+	private ArrayList<IRateCalculator> rateCalculators;
 
 	private static final String RATECONFIGFILE = "src/main/resources/com/example/geektrust/RateCalculatorConfig.xml";
 
 	public void initRateConfig() {
-		RateCalculatorConfig rateCalculatorConfig = JAXB.unmarshal(new File(RATECONFIGFILE), RateCalculatorConfig.class);
+		RateCalculatorConfig rateCalculatorConfig = JAXB.unmarshal(new File(RATECONFIGFILE),
+				RateCalculatorConfig.class);
 		System.out.println(rateCalculatorConfig.rateCalculators.size());
 		IRateCalculator irobj = rateCalculatorConfig.rateCalculators.get(0);
-		BorewellCalculator bobj = (BorewellCalculator)irobj;
+		BorewellCalculator bobj = (BorewellCalculator) irobj;
 		System.out.println(bobj.getBorewellRate());
 	}
-	
+
 	public static void main(String[] args) {
 		RateCalculatorConfig rateConfig = new RateCalculatorConfig();
 		System.out.println("Before rateConfig");

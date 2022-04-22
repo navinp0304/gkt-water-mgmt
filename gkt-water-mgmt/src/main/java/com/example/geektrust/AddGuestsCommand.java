@@ -8,13 +8,15 @@ import lombok.NonNull;
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 public class AddGuestsCommand implements ICommand {
 	@NonNull
-	@Getter Apartment apt;
+	@Getter
+	Apartment apt;
 	@NonNull
-	@Getter String cmd;
+	@Getter
+	String cmd;
 
 	public Apartment parseCommand() {
 		Integer guests = Integer.valueOf(cmd);
 		Integer totalguests = apt.getGuests() + guests;
-		return new Apartment(apt.getId(),apt.getRatioCORPORATIONBOREWELL(),totalguests);
+		return new Apartment(apt.getId(), apt.getRatioCORPORATIONBOREWELL(), totalguests);
 	}
 }

@@ -11,7 +11,8 @@ public class BorewellCalculator implements IRateCalculator {
 	private ApartmentConfig aptConfig;
 	@NonNull
 	private Apartment apt;
-	@Getter private double borewellRate=1.5;
+	@Getter
+	private double borewellRate = 1.5;
 
 	public RateSummary getCost() {
 		Double litres = apt.getResidents() * aptConfig.getPersonLitresMonth()

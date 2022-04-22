@@ -11,7 +11,8 @@ public class CorporationCalculator implements IRateCalculator {
 	ApartmentConfig aptConfig;
 	@NonNull
 	Apartment apt;
-	@Getter private double corporationRate=1.5;
+	@Getter
+	private double corporationRate = 1.5;
 
 	public RateSummary getCost() {
 		Double litres = apt.getResidents() * aptConfig.getPersonLitresMonth() * apt.getRatioCORPORATIONBOREWELL();

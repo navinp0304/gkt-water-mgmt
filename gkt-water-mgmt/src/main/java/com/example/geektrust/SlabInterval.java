@@ -1,7 +1,5 @@
 package com.example.geektrust;
 
-
-
 public class SlabInterval {
 	private int start;
 	private int end;
