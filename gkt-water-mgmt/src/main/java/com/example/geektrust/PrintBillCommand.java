@@ -11,8 +11,6 @@ public class PrintBillCommand implements ICommand {
 	@NonNull
 	Apartment apt;
 	@NonNull
-	String cmd;
-	@NonNull
 	List<IRateCalculator> costCalcs;
 
 	public Apartment parseCommand() {
