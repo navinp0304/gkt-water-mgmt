@@ -7,6 +7,11 @@ import lombok.Getter;
 public class Apartment {
 	private final Map<Integer, Integer> residentLookup = Map.of(2, 3, 3, 5);
 
+	private final Integer personLitresPerDay = 10;
+	private final Integer daysPerMonth = 30;
+	@Getter
+	private final Integer personLitresMonth = personLitresPerDay * daysPerMonth;
+
 	@Getter
 	private Integer id;
 

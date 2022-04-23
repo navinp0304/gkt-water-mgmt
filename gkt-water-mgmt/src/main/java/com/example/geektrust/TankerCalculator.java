@@ -12,14 +12,12 @@ public class TankerCalculator implements IRateCalculator {
 			new SlabInterval(1501, 3000, 5), new SlabInterval(3001, Integer.MAX_VALUE, 8));
 
 	@NonNull
-	private ApartmentConfig aptConfig;
-	@NonNull
 	private Apartment apt;
 
 	public RateSummary getCost() {
 
 		Double totcost = 0.0;
-		Integer slablitres = apt.getGuests() * aptConfig.getPersonLitresMonth();
+		Integer slablitres = apt.getGuests() * apt.getPersonLitresMonth();
 		for (SlabInterval s : slabList) {
 			totcost = totcost + s.getCost(slablitres);
 		}
