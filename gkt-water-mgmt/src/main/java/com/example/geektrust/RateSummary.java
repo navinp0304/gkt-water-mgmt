@@ -1,10 +1,11 @@
 package com.example.geektrust;
 
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
+@RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 public class RateSummary {
 	@NonNull
 	@Getter
@@ -14,6 +15,8 @@ public class RateSummary {
 	private Double cost;
 
 	public RateSummary add(RateSummary a) {
-		return new RateSummary(litres + a.getLitres(), cost + a.getCost());
+	 this.litres += a.getLitres();
+	 this.cost += a.getCost();
+	 return this;
 	}
 }

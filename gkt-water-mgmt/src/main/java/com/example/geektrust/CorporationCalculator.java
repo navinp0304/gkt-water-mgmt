@@ -1,20 +1,15 @@
 package com.example.geektrust;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 
-@RequiredArgsConstructor(access = AccessLevel.PACKAGE)
+@NoArgsConstructor 
 public class CorporationCalculator implements IRateCalculator {
-	@NonNull
-	Apartment apt;
-	@Getter
-	private double corporationRate = 1.5;
 
-	public RateSummary getCost() {
-		Double litres = apt.getResidents() * apt.getPersonLitresMonth() * apt.getRatioCORPORATIONBOREWELL();
-		Double cost = litres * corporationRate;
+	private final double CORPORATIONRATE = 1.0;
+
+	public RateSummary getCost(Apartment apt) {
+		Double litres = apt.getResidents() * apt.getPERSONLITRESMONTH() * apt.getRatioCORPORATIONBOREWELL();
+		Double cost = litres * CORPORATIONRATE;
 		return new RateSummary(litres, cost);
 	}
 }

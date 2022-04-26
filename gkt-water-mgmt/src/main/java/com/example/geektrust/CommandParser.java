@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+
 import lombok.AccessLevel;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -13,25 +14,17 @@ public class CommandParser {
 	@NonNull
 	String fileName;
 
-	void processCommand(String cmd) {
-		System.out.println(cmd);
-	}
-
 	void run() {
+		CommandCollections commandcols = new CommandCollections();
+		Apartment apt=null;
 		try (Scanner scanner = new Scanner(new File(fileName))) {
 			while (scanner.hasNext()) {
-				System.out.println(scanner.nextLine());
+				String line = scanner.nextLine();
+				apt=commandcols.parseCommand(apt, line);
+				
 			}
 		} catch (FileNotFoundException fnfe) {
 			fnfe.printStackTrace();
 		}
 	}
-
-	public static void main(String[] args) {
-		System.out.println(" i started " + "  "+ args.length+" "+args[0]);
-		System.out.println(System.getProperty("user.dir") );
-		CommandParser cp = new CommandParser(args[0]);
-		cp.run();
-	}
-
 }

@@ -3,16 +3,17 @@ package com.example.geektrust;
 import java.util.Map;
 
 import lombok.Getter;
+import lombok.Setter;
 
 public class Apartment {
 	private final Map<Integer, Integer> residentLookup = Map.of(2, 3, 3, 5);
 
-	private final Integer personLitresPerDay = 10;
-	private final Integer daysPerMonth = 30;
+	private final Integer PERSONLITRESPERDAY = 10;
+	private final Integer DAYSPERMONTH = 30;
 	@Getter
-	private final Integer personLitresMonth = personLitresPerDay * daysPerMonth;
+	private final Integer PERSONLITRESMONTH = PERSONLITRESPERDAY * DAYSPERMONTH;
 
-	@Getter
+	
 	private Integer id;
 
 	@Getter
@@ -21,7 +22,7 @@ public class Apartment {
 	@Getter
 	private Double ratioCORPORATIONBOREWELL;
 
-	@Getter
+	@Getter @Setter
 	private Integer guests;
 
 	Apartment(Integer id, Double ratio, Integer guests) {
@@ -30,5 +31,7 @@ public class Apartment {
 		this.ratioCORPORATIONBOREWELL = ratio;
 		this.guests = guests;
 	}
+	
+	
 
 }
