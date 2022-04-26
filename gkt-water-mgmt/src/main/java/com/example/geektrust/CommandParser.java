@@ -24,7 +24,7 @@ public class CommandParser {
 				
 			}
 		} catch (FileNotFoundException fnfe) {
-			fnfe.printStackTrace();
+			System.err.println("File not found\n");
 		}
 	}
 }

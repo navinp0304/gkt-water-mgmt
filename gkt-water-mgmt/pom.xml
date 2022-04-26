@@ -37,25 +37,6 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.jpeek</groupId>
-				<artifactId>jpeek-maven-plugin</artifactId>
-				<version>1.0.0</version>
-				<executions>
-					<execution>
-						<goals>
-							<!-- Bound by default to verify phase -->
-							<goal>analyze</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<!-- Those are the default values -->
-					<inputDirectory>${project.build.outputDirectory}</inputDirectory>
-					<outputDirectory>${project.build.directory}/jpeek/</outputDirectory>
-					<cohesionRate>8.0</cohesionRate>
-				</configuration>
-			</plugin>
-			<plugin>
 				<groupId>com.github.spotbugs</groupId>
 				<artifactId>spotbugs-maven-plugin</artifactId>
 				<version>4.6.0.0</version>
