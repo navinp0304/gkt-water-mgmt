@@ -1,9 +1,6 @@
 package com.example.geektrust;
 
-import lombok.AccessLevel;
-import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 public class AllotCommand implements ICommand {
 
 

@@ -1,9 +1,5 @@
 package com.example.geektrust;
 
-import lombok.RequiredArgsConstructor;
-import lombok.AccessLevel;
-
-@RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 public class AddGuestsCommand implements ICommand {
 
 	public Apartment parseCommand(Apartment apt,String command) {

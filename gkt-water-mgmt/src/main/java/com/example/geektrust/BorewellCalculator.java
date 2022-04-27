@@ -9,7 +9,8 @@ public class BorewellCalculator implements IRateCalculator {
 
 	public RateSummary getCost(Apartment apt) {
 		Double litres = apt.getResidents() * Apartment.getPERSONLITRESMONTH() * (1.0 - apt.getRatioCORPORATIONBOREWELL());
-		Double cost = litres * BOREWELLRATE;
+		litres = (double) Math.round(litres);
+		Double cost = (double) (litres * BOREWELLRATE);
 		return new RateSummary(litres, cost);
 	}
 

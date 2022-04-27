@@ -4,15 +4,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-
-import lombok.AccessLevel;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-
-@RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 public class CommandParser {
-	@NonNull
+
 	String fileName;
+	CommandParser(String fileName){
+		this.fileName = fileName;
+	}
 
 	void run() {
 		CommandCollections commandcols = new CommandCollections();
@@ -24,7 +21,7 @@ public class CommandParser {
 				
 			}
 		} catch (FileNotFoundException fnfe) {
-			System.err.println("File not found\n");
+			System.err.print("File not found\n");
 		}
 	}
 }
