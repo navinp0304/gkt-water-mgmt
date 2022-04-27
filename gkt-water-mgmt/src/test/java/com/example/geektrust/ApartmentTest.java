@@ -9,6 +9,7 @@ class ApartmentTest {
 	@Test
 	void testApartment() {
 		Apartment apt = new Apartment(2, 0.5, 0);
+		assertNotEquals(apt,null);
 	}
 
 	@Test
