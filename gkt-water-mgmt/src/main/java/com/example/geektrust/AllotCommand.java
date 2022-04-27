@@ -1,23 +1,25 @@
 package com.example.geektrust;
 
 
-public class AllotCommand implements ICommand {
+import org.jetbrains.annotations.NotNull;
+
+public class AllotCommand {
 
 
-	private Apartment createApartment(int type, double ratio) {
+	private @NotNull Apartment createApartment(int type, double ratio) {
 		return new Apartment(type, ratio, 0);
 	}
 
-	private Double parseRatio(String s) {
+	private @NotNull Double parseRatio(@NotNull String s) {
 		String[] tokens = s.split(":");
-		Integer num = Integer.valueOf(tokens[0]);
-		Integer den = Integer.valueOf(tokens[1]);
+		int num = Integer.parseInt(tokens[0]);
+		int den = Integer.parseInt(tokens[1]);
 		return num * 1.0 / (num + den);
 	}
 
-	public Apartment parseCommand(Apartment apt,String command) {
+	public @NotNull Apartment parseCommand(@NotNull String command) {
 		String[] tokens = command.split(" ");
-		Integer type = Integer.valueOf(tokens[1]);
+		int type = Integer.parseInt(tokens[1]);
 		String ratioStr = tokens[2];
 		Double ratio = parseRatio(ratioStr);
 		return createApartment(type, ratio);

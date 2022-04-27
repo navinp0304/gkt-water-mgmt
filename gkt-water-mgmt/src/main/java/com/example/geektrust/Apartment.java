@@ -4,25 +4,30 @@ import java.util.Map;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.jetbrains.annotations.NotNull;
 
 public class Apartment {
-	private final Map<Integer, Integer> residentLookup = Map.of(2, 3, 3, 5);
 
+	@NotNull
 	private final Integer PERSONLITRESPERDAY = 10;
+
+	@NotNull
 	private final Integer DAYSPERMONTH = 30;
-	@Getter
+
+	@Getter @NotNull
 	private final Integer PERSONLITRESMONTH = PERSONLITRESPERDAY * DAYSPERMONTH;
 
 	@Getter
-	private Integer residents;
+	private final Integer residents;
 
 	@Getter
-	private Double ratioCORPORATIONBOREWELL;
+	private final Double ratioCORPORATIONBOREWELL;
 
 	@Getter @Setter
 	private Integer guests;
 
 	Apartment(Integer id, Double ratio, Integer guests) {
+		Map<Integer, Integer> residentLookup = Map.of(2, 3, 3, 5);
 		residents = residentLookup.get(id);
 		this.ratioCORPORATIONBOREWELL = ratio;
 		this.guests = guests;

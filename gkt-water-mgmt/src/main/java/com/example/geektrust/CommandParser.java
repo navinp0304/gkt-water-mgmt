@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class CommandParser {
 
-	String fileName;
+	final String fileName;
 	CommandParser(String fileName){
 		this.fileName = fileName;
 	}

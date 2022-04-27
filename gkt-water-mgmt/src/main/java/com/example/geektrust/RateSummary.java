@@ -1,6 +1,7 @@
 package com.example.geektrust;
 
 import lombok.Getter;
+import org.jetbrains.annotations.NotNull;
 
 public class RateSummary {
 	@Getter
@@ -13,9 +14,8 @@ public class RateSummary {
 		this.cost=cost;
 	}
 
-	public void add(RateSummary a) {
+	public void add(@NotNull RateSummary a) {
 	 this.litres += a.getLitres();
 	 this.cost += a.getCost();
-	 return ;
 	}
 }

@@ -9,7 +9,7 @@ class AllotCommandTest {
 	@Test
 	void testParseCommand() {
 		AllotCommand command = new AllotCommand();
-		Apartment apt=command.parseCommand(null, "ALLOT_WATER 3 1:5");
+		Apartment apt=command.parseCommand("ALLOT_WATER 3 1:5");
 		assertNotEquals(apt,null);
 	}
 

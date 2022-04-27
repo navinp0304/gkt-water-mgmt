@@ -1,8 +1,10 @@
 package com.example.geektrust;
 
-public class AddGuestsCommand implements ICommand {
+import org.jetbrains.annotations.NotNull;
 
-	public Apartment parseCommand(Apartment apt,String command) {
+public class AddGuestsCommand {
+
+	public @NotNull Apartment parseCommand(@NotNull Apartment apt, @NotNull String command) {
 		String[] tokens = command.split(" ");
 		Integer guests = Integer.valueOf(tokens[1]);
 		Integer totalguests = apt.getGuests() + guests;

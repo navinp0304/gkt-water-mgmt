@@ -1,9 +1,9 @@
 package com.example.geektrust;
 
 public class SlabInterval {
-	private int start;
-	private int end;
-	private int rate;
+	private final int start;
+	private final int end;
+	private final int rate;
 
 	SlabInterval(int start, int end, int rate) {
 		this.start = Math.max(start, 1);

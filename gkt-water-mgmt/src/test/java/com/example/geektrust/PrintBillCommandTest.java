@@ -5,19 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class PrintBillCommandTest {
-
-	@BeforeEach
-	void setUp() throws Exception {
-	}
-
-	@AfterEach
-	void tearDown() throws Exception {
-	}
 
 	@Test
 	void testPrintBillCommand() {
@@ -32,14 +22,16 @@ class PrintBillCommandTest {
 		PrintStream outStream = System.out;	
 		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 		System.setOut(new PrintStream(outContent));
-		apt=command.parseCommand(apt, "BILL");
+		apt=command.parseCommand(apt);
 		System.setOut(outStream);
 		RateSummary exp=new RateSummary(2400.0,5215.0);
 		String[] tokens = outContent.toString().trim().split(" ");
 		Double litres = Double.parseDouble(tokens[0]);
 		Double cost = Double.parseDouble(tokens[1]);
 		RateSummary observed = new RateSummary(litres,cost);
+		Apartment finalApt = apt;
 		assertAll("Print Bill Command rate summary",
+				() -> assertEquals(finalApt.getGuests(),5),
 				() -> assertEquals(observed.getLitres(),exp.getLitres(),1.0e-6),
 				() -> assertEquals(observed.getCost(),exp.getCost(),1.0e-6)
 				);		
