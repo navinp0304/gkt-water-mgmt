@@ -13,13 +13,14 @@ class MainTest {
 	void testMain() {
 		String[] args= {"sample_input/input2.txt"};
 		PrintStream stdout = System.out;
-
+		Main mainobj = new Main();
 		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 		System.setOut(new PrintStream(outContent));
 		Main.main(args);
 		System.setOut(stdout);
 		assertAll("Main test",
-				() -> assertEquals(outContent.toString(),"2400 5215\n")
+				() -> assertEquals(outContent.toString(),"2400 5215\n"),
+				() -> assertNotEquals(mainobj,null)
 		);
 	}
 

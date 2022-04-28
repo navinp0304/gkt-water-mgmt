@@ -3,7 +3,7 @@ package com.example.geektrust;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
-import com.example.geektrust.RateSummary;
+
 
 class BorewellCalculatorTest {
 

@@ -3,7 +3,6 @@ package com.example.geektrust;
 import java.util.Map;
 
 import lombok.Getter;
-import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
 
 public class Apartment {
@@ -23,7 +22,7 @@ public class Apartment {
 	@Getter
 	private final Double ratioCORPORATIONBOREWELL;
 
-	@Getter @Setter
+	@Getter 
 	private Integer guests;
 
 	Apartment(Integer id, Double ratio, Integer guests) {
@@ -31,6 +30,14 @@ public class Apartment {
 		residents = residentLookup.get(id);
 		this.ratioCORPORATIONBOREWELL = ratio;
 		this.guests = guests;
+	}
+
+	Apartment addGuests(String fullCmd){
+		
+		String[] tokens = fullCmd.split(" ");
+		int newGuests = Integer.parseInt(tokens[1]);	
+		this.guests += newGuests;
+		return this;
 	}
 	
 	
