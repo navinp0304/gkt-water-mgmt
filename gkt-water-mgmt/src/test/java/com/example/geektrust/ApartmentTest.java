@@ -37,10 +37,10 @@ class ApartmentTest {
 	}
 
 	@Test
-	void testaddGuests() {
+	void testSetGuests() {
 		Apartment apt = new Apartment(3, 0.3, 7);
-		apt=apt.addGuests("ADD_GUESTS 10");
-		assertEquals(apt.getGuests(),17);
+		apt.setGuests(10);
+		assertEquals(apt.getGuests(),10);
 	}
 
 }

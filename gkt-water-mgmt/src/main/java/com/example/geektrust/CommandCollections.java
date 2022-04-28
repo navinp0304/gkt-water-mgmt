@@ -9,7 +9,7 @@ public class CommandCollections {
 	@NotNull
 	private final Map<String, BiFunction<Apartment, String, Apartment>> commandsLookup = Map.of(
 				"ALLOT_WATER", (Apartment apt, String cmd) -> new AllotCommand().parseCommand(cmd),
-				"ADD_GUESTS", Apartment::addGuests,
+				"ADD_GUESTS", (Apartment apt, String cmd) -> new AddGuestsCommand().parseCommand(apt, cmd), 
 				"BILL",	(Apartment apt, String cmd) -> new PrintBillCommand().parseCommand(apt)
 			);
 

@@ -10,25 +10,21 @@ import org.junit.jupiter.api.Test;
 class CommandCollectionsTest {
 
 	@Test
-	void testAllot() {
+	void testParseCommandAllot() {
 		CommandCollections command = new CommandCollections();
 		Apartment apt;
 		apt=command.parseCommand(null, "ALLOT_WATER 3 1:5");
 		assertNotEquals(apt,null);
 	}
-
-
+	
 	@Test
-	void testGuests() {
+	void testParseCommandAddGuests() {
 		CommandCollections command = new CommandCollections();
 		Apartment apt;
 		apt=command.parseCommand(null, "ALLOT_WATER 3 1:5");
 		apt=command.parseCommand(apt, "ADD_GUESTS 10");
 		assertEquals(apt.getGuests(),10);
 	}
-
-
-
 	
 	@Test
 	void testParseCommandBill() {
