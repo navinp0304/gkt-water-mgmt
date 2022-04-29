@@ -9,12 +9,14 @@ class CorporationCalculatorTest {
 	@Test
 	void testGetCost() {
 		CorporationCalculator calculator = new CorporationCalculator();
-		Apartment apt = new Apartment(2,0.5,0);
-		RateSummary rate = calculator.getCost(apt);
-		RateSummary exp = new RateSummary(450.0,450.0);
+//		Apartment apt = new Apartment(2,0.5,0);
+		Apartment apt=new AllotCommand().parseCommand("ALLOT_WATER 2 1:1");
+
+		Double[] rate = calculator.getCost(apt);
+		Double[] exp = new Double[] {450.0,450.0};
 		assertAll("RateSummary corporation",
-				() -> assertEquals(rate.getCost(),exp.getCost(),1.0e-6),
-				() -> assertEquals(rate.getLitres(),exp.getLitres())
+				() -> assertEquals(rate[0],exp[0],1.0e-6),
+				() -> assertEquals(rate[1],exp[1])
 				);
 	}
 

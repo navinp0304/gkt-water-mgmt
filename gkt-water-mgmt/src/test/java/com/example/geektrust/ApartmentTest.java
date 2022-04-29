@@ -9,6 +9,7 @@ class ApartmentTest {
 	@Test
 	void testApartment() {
 		Apartment apt = new Apartment(2, 0.5, 0);
+
 		assertNotEquals(apt,null);
 	}
 
@@ -26,19 +27,24 @@ class ApartmentTest {
 
 	@Test
 	void testGetRatioCORPORATIONBOREWELL() {
-		Apartment apt = new Apartment(3, 0.3, 0);
+//		Apartment apt = new Apartment(3, 0.3, 0);
+		Apartment apt=new AllotCommand().parseCommand("ALLOT_WATER 2 3:7");
 		assertEquals(apt.getRatioCORPORATIONBOREWELL(),0.3,1.0e-6);
 	}
 
 	@Test
 	void testGetGuests() {
-		Apartment apt = new Apartment(3, 0.3, 7);
+		//Apartment apt = new Apartment(3, 0.3, 7);
+		Apartment apt=new AllotCommand().parseCommand("ALLOT_WATER 3 3:7");
+		apt = new AddGuestsCommand().parseCommand(apt,"ADD_GUESTS 7");
 		assertEquals(apt.getGuests(),7);
 	}
 
 	@Test
 	void testSetGuests() {
-		Apartment apt = new Apartment(3, 0.3, 7);
+		//Apartment apt = new Apartment(3, 0.3, 7);
+		Apartment apt=new AllotCommand().parseCommand("ALLOT_WATER 3 3:7");
+
 		apt.setGuests(10);
 		assertEquals(apt.getGuests(),10);
 	}

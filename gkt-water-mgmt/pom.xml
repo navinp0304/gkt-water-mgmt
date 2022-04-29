@@ -30,7 +30,14 @@
             <version>23.0.0</version>
             <scope>compile</scope>
         </dependency>
-    </dependencies>
+		<dependency>
+			<groupId>com.buschmais.jqassistant</groupId>
+			<artifactId>jqassistant-maven-plugin</artifactId>
+			<version>1.11.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
 	<properties>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
@@ -38,10 +45,29 @@
 		<java.version>11</java.version>
 		<sonar.organization>navinp0304</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<!-- Define your desired jQAssistant version here -->
+		<jqassistant.version>1.11.1</jqassistant.version>
 	</properties>
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>com.buschmais.jqassistant</groupId>
+				<artifactId>jqassistant-maven-plugin</artifactId>
+				<version>1.11.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>scan</goal>
+							<goal>analyze</goal>
+						</goals>
+						<configuration>
+							<warnOnSeverity>MINOR</warnOnSeverity>
+							<failOnSeverity>MAJOR</failOnSeverity>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>com.github.spotbugs</groupId>
 				<artifactId>spotbugs-maven-plugin</artifactId>

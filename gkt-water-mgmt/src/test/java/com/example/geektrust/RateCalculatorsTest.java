@@ -14,13 +14,16 @@ class RateCalculatorsTest {
 		//ADD_GUESTS 3
 		//BILL
 		
-		Apartment apt=new Apartment(2,0.3,5);
+		//Apartment apt=new Apartment(2,0.3,5);
+		Apartment apt=new AllotCommand().parseCommand("ALLOT_WATER 2 3:7");
+		apt = new AddGuestsCommand().parseCommand(apt,"ADD_GUESTS 5");
+
 		RateCalculators rateCalcs=new RateCalculators();
-		RateSummary rateSummary= rateCalcs.getCost(apt);
-		RateSummary expSummary = new RateSummary(2400.0,5215.0);
+		Double[] rateSummary= rateCalcs.getCost(apt);
+		Double[] expSummary = new Double[]{2400.0,5215.0};
 		assertAll("Ratesummary for all RateCalculators",
-				() -> assertEquals(rateSummary.getCost(),expSummary.getCost(),1.0e-6),
-				() -> assertEquals(rateSummary.getLitres(),expSummary.getLitres(),1.0e-6)
+				() -> assertEquals(rateSummary[0],expSummary[0],1.0e-6),
+				() -> assertEquals(rateSummary[1],expSummary[1],1.0e-6)
 				);
 	}
 

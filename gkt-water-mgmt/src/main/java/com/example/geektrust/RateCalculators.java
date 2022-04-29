@@ -9,10 +9,12 @@ public class RateCalculators implements IRateCalculator {
 	private @NotNull final List<IRateCalculator> allCalculators = List.of(new BorewellCalculator(),
 			new CorporationCalculator(),new TankerCalculator());
 	@Override
-	public @NotNull RateSummary getCost(Apartment apt) {
-		RateSummary total = new RateSummary(0.0, 0.0);
+	public @NotNull Double[] getCost(Apartment apt) {
+		Double[] total = new Double[]{0.0, 0.0};
 		for (IRateCalculator rateCalc : allCalculators) {
-			total.add(rateCalc.getCost(apt));
+			Double[] tmp = rateCalc.getCost(apt);
+			total[0] += tmp[0];
+			total[1] += tmp[1];
 		}
 		return total;
 	}
