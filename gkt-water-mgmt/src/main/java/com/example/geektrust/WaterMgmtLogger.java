@@ -17,8 +17,16 @@ public class WaterMgmtLogger {
 		try {
 			brRead = new BufferedReader(new FileReader(fileName));
 			firstLine = brRead.readLine();
+			
 		} catch (IOException e1) {
 			e1.printStackTrace();
+		}finally {
+			try {
+				brRead.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return firstLine;
 		
@@ -29,9 +37,16 @@ public class WaterMgmtLogger {
 		try {
 			brWrite = new BufferedWriter(new FileWriter(fileName));
 			brWrite.write(s);
-			brWrite.close();
+			
 		} catch (IOException e1) {
 			e1.printStackTrace();
+		} finally {
+			try {
+				brWrite.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 }
