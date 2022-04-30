@@ -15,7 +15,7 @@ public class TankerCalculator implements IRateCalculator {
 	public @NotNull Double[] getCost(@NotNull Apartment apt) {
 
 		double totcost = 0.0;
-		int slablitres = apt.getGuests() * apt.getPERSONLITRESMONTH();
+		int slablitres = apt.getGuests() * Apartment.getPERSONLITRESMONTH();
 		for (SlabInterval s : slabList) {
 			totcost = totcost + s.getCost(slablitres);
 		}

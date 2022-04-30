@@ -14,7 +14,7 @@ class TankerCalculatorTest {
 		apt = new AddGuestsCommand().parseCommand(apt,"ADD_GUESTS 5");
 
 		Double[] rate= tankerCalc.getCost(apt);
-		Double[] exp = new Double[]{1500.0,4000.0};
+		Double[] exp = {1500.0,4000.0};
 		assertAll("tanker calc get cost",
 				() -> assertEquals(rate[0], exp[0],1.0e-6),
 				() -> assertEquals(rate[1],exp[1],1.0e-6)

@@ -12,7 +12,7 @@ class BorewellCalculatorTest {
 		//Apartment apt=new Apartment(2,0.5,0);
 		Apartment apt=new AllotCommand().parseCommand("ALLOT_WATER 2 1:1");
 		Double[] rate = boreCalculator.getCost(apt);
-		Double[] exp = new Double[]{450.0,675.0};
+		Double[] exp = {450.0,675.0};
 		assertAll("Checking rate Summaries ",
 				() -> assertEquals(rate[0],exp[0],1.0e-6),
 				() -> assertEquals(rate[1],exp[1],1.0e-6)

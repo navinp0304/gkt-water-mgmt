@@ -10,7 +10,7 @@ public class RateCalculators implements IRateCalculator {
 			new CorporationCalculator(),new TankerCalculator());
 	@Override
 	public @NotNull Double[] getCost(Apartment apt) {
-		Double[] total = new Double[]{0.0, 0.0};
+		Double[] total = {0.0, 0.0};
 		for (IRateCalculator rateCalc : allCalculators) {
 			Double[] tmp = rateCalc.getCost(apt);
 			total[0] += tmp[0];

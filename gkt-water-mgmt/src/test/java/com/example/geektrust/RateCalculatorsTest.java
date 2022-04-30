@@ -20,7 +20,7 @@ class RateCalculatorsTest {
 
 		RateCalculators rateCalcs=new RateCalculators();
 		Double[] rateSummary= rateCalcs.getCost(apt);
-		Double[] expSummary = new Double[]{2400.0,5215.0};
+		Double[] expSummary = {2400.0,5215.0};
 		assertAll("Ratesummary for all RateCalculators",
 				() -> assertEquals(rateSummary[0],expSummary[0],1.0e-6),
 				() -> assertEquals(rateSummary[1],expSummary[1],1.0e-6)

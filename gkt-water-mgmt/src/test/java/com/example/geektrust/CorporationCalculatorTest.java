@@ -13,7 +13,7 @@ class CorporationCalculatorTest {
 		Apartment apt=new AllotCommand().parseCommand("ALLOT_WATER 2 1:1");
 
 		Double[] rate = calculator.getCost(apt);
-		Double[] exp = new Double[] {450.0,450.0};
+		Double[] exp = {450.0,450.0};
 		assertAll("RateSummary corporation",
 				() -> assertEquals(rate[0],exp[0],1.0e-6),
 				() -> assertEquals(rate[1],exp[1])

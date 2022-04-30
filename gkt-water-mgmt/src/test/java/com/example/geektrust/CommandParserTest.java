@@ -11,35 +11,22 @@ class CommandParserTest {
 	@Test
 	void testRun() {
 		CommandParser cmdParser = new CommandParser("sample_input/input2.txt");
-		PrintStream stdout = System.out;
-		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-		System.setOut(new PrintStream(outContent));
+
 		cmdParser.run();
+		
+		WaterMgmtLogger logger = new WaterMgmtLogger();
+		String firstLine = logger.readFirstLine();
 		// restore
-		System.setOut(stdout);
-		assertEquals(outContent.toString(), "2400 5215\n");
+		assertEquals(firstLine, "2400 5215");
 	}
 
 	@Test
 	void testCommandParserNoFile() throws IOException {
 		CommandParser cmdParser = new CommandParser("nofile");
-		InputStream stdin = System.in;
-		PrintStream stderr = System.err;
-
-		try (ByteArrayOutputStream errContent = new ByteArrayOutputStream();
-				PrintStream newStdErr = new PrintStream(errContent)) {
-			System.setErr(newStdErr);
-			String data = "ALLOT_WATER 2 1:2\nADD_GUESTS 10\nBILL\n";
-			System.setIn(new ByteArrayInputStream(data.getBytes()));
-			cmdParser.run();
-			// restore
-			System.setErr(stderr);
-			System.setIn(stdin);
-			assertEquals(errContent.toString(), "FILE NOT FOUND\n");
-		} catch (IOException ex) {
-			throw ex;
-		}
-
+		cmdParser.run();
+		WaterMgmtLogger logger= new WaterMgmtLogger();
+		String firstLine=logger.readFirstLine();
+		assertEquals(firstLine, "FILE NOT FOUND");
 	}
 
 	@Test

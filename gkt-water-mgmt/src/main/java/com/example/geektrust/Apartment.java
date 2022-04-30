@@ -9,16 +9,16 @@ import org.jetbrains.annotations.NotNull;
 public class Apartment {
 
 	@NotNull
-	private final Integer PERSONLITRESPERDAY = 10;
+	private static final Integer PERSONLITRESPERDAY = 10;
 
 	@NotNull
-	private final Integer DAYSPERMONTH = 30;
+	private static final Integer DAYSPERMONTH = 30;
 
 	@Getter @NotNull
-	private final Integer PERSONLITRESMONTH = PERSONLITRESPERDAY * DAYSPERMONTH;
+	private static final Integer PERSONLITRESMONTH = PERSONLITRESPERDAY * DAYSPERMONTH;
 
 	@Getter
-	private final Integer residents;
+	private  final Integer residents;
 
 	@Getter
 	private final Double ratioCORPORATIONBOREWELL;
