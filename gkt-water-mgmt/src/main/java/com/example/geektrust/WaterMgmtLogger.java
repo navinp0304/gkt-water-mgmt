@@ -5,11 +5,10 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+
 
 public class WaterMgmtLogger {
-	private final String fileName = "logFile.txt";
+	private static final String fileName = "logFile.txt";
 	
 	
 	public String readFirstLine() {
@@ -34,6 +33,5 @@ public class WaterMgmtLogger {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		return ;
 	}
 }

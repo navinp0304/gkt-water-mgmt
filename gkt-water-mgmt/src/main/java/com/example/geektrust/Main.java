@@ -8,6 +8,6 @@ public class Main {
     	CommandParser cp = new CommandParser(filename);
     	cp.run();
     	WaterMgmtLogger logger = new WaterMgmtLogger();
-    	System.out.println(logger.readFirstLine());
+    	//System.out.println(logger.readFirstLine());
 	}
 }
