@@ -12,7 +12,7 @@ public class WaterMgmtLogger {
 	
 	
 	public String readFirstLine() {
-		BufferedReader brRead;
+		BufferedReader brRead=null;
 		String firstLine = null;
 		try {
 			brRead = new BufferedReader(new FileReader(fileName));
