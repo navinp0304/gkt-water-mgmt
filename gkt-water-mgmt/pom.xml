@@ -24,23 +24,29 @@
 			<version>1.18.24</version>
 			<scope>provided</scope>
 		</dependency>
-       <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-            <version>23.0.0</version>
-       </dependency>
+		<dependency>
+			<groupId>org.jetbrains</groupId>
+			<artifactId>annotations</artifactId>
+			<version>23.0.0</version>
+		</dependency>
 
 
-               <dependency>
-                       <groupId>com.buschmais.jqassistant</groupId>
-                       <artifactId>jqassistant-maven-plugin</artifactId>
-                       <version>1.11.1</version>
-                       <scope>provided</scope>
-               </dependency>
- 
+		<dependency>
+			<groupId>com.buschmais.jqassistant</groupId>
+			<artifactId>jqassistant-maven-plugin</artifactId>
+			<version>1.11.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.jpeek/jpeek-maven-plugin -->
+		<dependency>
+			<groupId>org.jpeek</groupId>
+			<artifactId>jpeek-maven-plugin</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 
 
-		</dependencies>
+	</dependencies>
 	<properties>
 		<maven.compiler.source>16</maven.compiler.source>
 		<maven.compiler.target>16</maven.compiler.target>

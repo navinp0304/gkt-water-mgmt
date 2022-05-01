@@ -6,43 +6,44 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-
 public class WaterMgmtLogger {
 	private static final String fileName = "logFile.txt";
-	
-	
+
 	public String readFirstLine() {
-		BufferedReader brRead=null;
+		BufferedReader brRead = null;
 		String firstLine = null;
 		try {
 			brRead = new BufferedReader(new FileReader(fileName));
 			firstLine = brRead.readLine();
-			
+
 		} catch (IOException e1) {
 			e1.printStackTrace();
-		}finally {
+		} finally {
 			try {
-				brRead.close();
+				if (brRead != null)
+					brRead.close();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 		return firstLine;
-		
+
 	}
+
 	public void writeFirstLine(String s) {
-		BufferedWriter brWrite=null;
-		
+		BufferedWriter brWrite = null;
+
 		try {
 			brWrite = new BufferedWriter(new FileWriter(fileName));
 			brWrite.write(s);
-			
+
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		} finally {
 			try {
-				brWrite.close();
+				if (brWrite != null)
+					brWrite.close();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
